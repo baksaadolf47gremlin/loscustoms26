@@ -12,8 +12,11 @@ const Hero = () => {
 
   return (
     <section className="relative w-full bg-black pt-10 sm:pt-12 lg:pt-16 pb-8 px-2 sm:px-6 lg:px-12 xl:px-24 flex flex-col items-center justify-start min-h-[90vh]">
-      {/* Framed Video Container - Perfect 16:9 aspect ratio limited by a smart max-width so it always stays on screen natively without cropping! */}
-      <div className="relative w-[96%] max-w-[1440px] aspect-video mx-auto overflow-hidden rounded-xl sm:rounded-2xl shadow-[0_0_80px_rgba(0,0,0,0.8)] bg-black flex flex-col items-start justify-start">
+      {/* Végleges Webkit Safari/Chrome trükk, ami letiltja a border-radius alapú GPU szétesést videókról! */}
+      <div 
+        className="relative w-[96%] max-w-[1440px] aspect-video mx-auto overflow-hidden rounded-xl sm:rounded-2xl shadow-[0_0_80px_rgba(0,0,0,0.8)] bg-black flex flex-col items-start justify-start transform-gpu"
+        style={{ WebkitMaskImage: '-webkit-radial-gradient(white, black)', WebkitBackfaceVisibility: 'hidden', transform: 'translateZ(0)' }}
+      >
         
         {/* A videó natívan, filterek nélkül futtatva a MAXIMÁLIS teljesítményért */}
         <video

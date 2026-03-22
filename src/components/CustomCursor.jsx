@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 import { motion, useMotionValue } from 'framer-motion'
-import middleFingerImg from '../middlefinger.png'
+
 const CustomCursor = () => {
   const [isHovering, setIsHovering] = useState(false)
   const [isClicked, setIsClicked] = useState(false)
@@ -113,7 +113,7 @@ const CustomCursor = () => {
       >
         {isHovering ? (
           <img 
-            src={middleFingerImg} 
+            src="/middlefinger.png" 
             alt="Middle Finger Cursor" 
             className="w-5 h-auto drop-shadow-md pointer-events-none" // w-5 pontosan 20px-nek felel meg
             style={{ filter: 'drop-shadow(0px 2px 4px rgba(0,0,0,0.5))' }}
