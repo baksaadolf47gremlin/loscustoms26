@@ -45,20 +45,12 @@ const CustomCursor = () => {
 
     let scrollTimeout;
     const handleScroll = () => {
-      // Görgetéskor azonnal (0 mp késéssel) eldobjuk a custom hover állapotot
+      // Görgetéskor eldobjuk a custom hover állapotot
       setIsHovering(false)
       
-      // TRÜKK: Rákényszerítjük a böngészőt, hogy frissítse a NATIV CSS :hover állapotokat is!
-      // Görgetés közben letiltjuk a hovert a teljes oldalon, majd ha megáll, visszakapcsoljuk.
-      // Ez azonnali hit-tesztelést (újraszámlálást) kényszerít ki.
-      if (!document.body.classList.contains('pointer-events-none')) {
-        document.body.classList.add('pointer-events-none')
-      }
-      
-      clearTimeout(scrollTimeout)
-      scrollTimeout = setTimeout(() => {
-        document.body.classList.remove('pointer-events-none')
-      }, 60) // 60ms a görgetés megállása után
+      // A performancia (és Unlighthouse) érdekében NEM módosítjuk a document.body 
+      // classList-jét, mert az a másodperc törtrésze alatt Layout Thrashing-et 
+      // (folyamatos teljes oldal-újrarendezést) okoz a felületen scroll közben!
     }
 
     // Passive true a maximális teljesítményért (nem blokkolja a böngésző renderelését)
