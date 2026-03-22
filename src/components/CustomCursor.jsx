@@ -23,10 +23,17 @@ const CustomCursor = () => {
       setIsVisible(true)
       mouseX.set(e.clientX)
       mouseY.set(e.clientY)
-      
-      // Azonnali, késleltetés nélküli érzékelés, amint csak 1 pixelt is megmozdul az egér
-      if (e.target && e.target.closest) {
-        setIsHovering(!!e.target.closest('a, button, input, textarea, .cursor-pointer, .gallery-img'))
+    }
+
+    const handleMouseOver = (e) => {
+      if (e.target && e.target.closest && e.target.closest('a, button, input, textarea, .cursor-pointer, .gallery-img')) {
+        setIsHovering(true)
+      }
+    }
+
+    const handleMouseOut = (e) => {
+      if (e.target && e.target.closest && e.target.closest('a, button, input, textarea, .cursor-pointer, .gallery-img')) {
+        setIsHovering(false)
       }
     }
 
@@ -41,39 +48,23 @@ const CustomCursor = () => {
     
     const manageMouseLeave = () => {
       setIsVisible(false)
-    }
-
-    let scrollTimeout;
-    const handleScroll = () => {
-      // Görgetéskor azonnal (0 mp késéssel) eldobjuk a custom hover állapotot
       setIsHovering(false)
-      
-      // TRÜKK: Rákényszerítjük a böngészőt, hogy frissítse a NATIV CSS :hover állapotokat is!
-      // Görgetés közben letiltjuk a hovert a teljes oldalon, majd ha megáll, visszakapcsoljuk.
-      // Ez azonnali hit-tesztelést (újraszámlálást) kényszerít ki.
-      if (!document.body.classList.contains('pointer-events-none')) {
-        document.body.classList.add('pointer-events-none')
-      }
-      
-      clearTimeout(scrollTimeout)
-      scrollTimeout = setTimeout(() => {
-        document.body.classList.remove('pointer-events-none')
-      }, 60) // 60ms a görgetés megállása után
     }
 
-    // Passive true a maximális teljesítményért (nem blokkolja a böngésző renderelését)
     window.addEventListener('mousemove', manageMouseMove, { passive: true })
+    window.addEventListener('mouseover', handleMouseOver, { passive: true })
+    window.addEventListener('mouseout', handleMouseOut, { passive: true })
     window.addEventListener('mousedown', manageMouseDown, { passive: true })
     window.addEventListener('mouseup', manageMouseUp, { passive: true })
     window.addEventListener('mouseleave', manageMouseLeave, { passive: true })
-    window.addEventListener('scroll', handleScroll, { passive: true, capture: true })
 
     return () => {
       window.removeEventListener('mousemove', manageMouseMove)
+      window.removeEventListener('mouseover', handleMouseOver)
+      window.removeEventListener('mouseout', handleMouseOut)
       window.removeEventListener('mousedown', manageMouseDown)
       window.removeEventListener('mouseup', manageMouseUp)
       window.removeEventListener('mouseleave', manageMouseLeave)
-      window.removeEventListener('scroll', handleScroll, { capture: true })
       document.documentElement.classList.remove('hide-native-cursor')
     }
   }, [mouseX, mouseY])
