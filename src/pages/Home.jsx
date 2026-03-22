@@ -1,11 +1,270 @@
-const Home = () => {
+import { useRef } from 'react'
+import { Link } from 'react-router-dom'
+import { motion } from 'framer-motion'
+import { ChevronDown, Star, MapPin, Phone, ArrowRight, Shield, Sparkles, Layers } from 'lucide-react'
+import ScrollReveal from '../components/ScrollReveal'
+import BeforeAfter from '../components/BeforeAfter'
+import ContactSection from '../components/ContactSection'
+
+// ─── Hero ────────────────────────────────────────────────────────────────────
+const Hero = () => {
+  const videoRef = useRef(null)
+
   return (
-    <main>
-      <section className="min-h-screen flex items-center justify-center">
-        <h1 className="font-heading text-4xl text-accent">Los Customs – Főoldal</h1>
-      </section>
-    </main>
+    <section className="relative w-full bg-black pt-10 sm:pt-12 lg:pt-16 pb-8 px-2 sm:px-6 lg:px-12 xl:px-24 flex flex-col items-center justify-start min-h-[90vh]">
+      {/* Framed Video Container - Perfect 16:9 aspect ratio limited by a smart max-width so it always stays on screen natively without cropping! */}
+      <div className="relative w-[96%] max-w-[1440px] aspect-video mx-auto overflow-hidden rounded-xl sm:rounded-2xl shadow-[0_0_80px_rgba(0,0,0,0.8)] bg-black flex flex-col items-start justify-start">
+        
+        {/* CSS Image Enhancements applied directly to the video tag */}
+        <video
+          ref={videoRef}
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="absolute inset-0 w-full h-full object-cover brightness-105 contrast-125 saturate-[1.15] z-0"
+        >
+          {/* Multiple sources for responsive WebM and optimized MP4 streaming */}
+          <source src="/videos/hero.webm" type="video/webm" />
+          <source src="/videos/hero.mp4" type="video/mp4" />
+        </video>
+        
+        {/* Subtle Film Grain Noise Overlay to hide video banding and add cinematic GTA V mood */}
+        <div className="noise-overlay absolute inset-0 mix-blend-overlay opacity-50 z-10 pointer-events-none" />
+
+        {/* Content safely anchored EXACTLY in the top-left corner - Now wider and less tall */}
+        <div className="absolute top-0 left-0 z-20 w-[90%] max-w-[340px] sm:max-w-[500px] lg:max-w-[650px] xl:max-w-[750px] bg-black/50 backdrop-blur-lg p-6 sm:p-10 lg:px-14 lg:py-10 flex flex-col items-start text-left rounded-br-2xl shadow-[20px_20px_60px_rgba(0,0,0,0.5)]">
+          <motion.p
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="section-label mb-2 text-[8px] sm:text-[10px] tracking-[0.2em]"
+          >
+            Budapest, 1194 · Professzionális Autódetailing
+          </motion.p>
+
+          <motion.h1
+            initial={{ opacity: 0, x: -30 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.7, delay: 0.35 }}
+            className="font-heading font-black text-2xl sm:text-3xl lg:text-4xl xl:text-[2.75rem] text-light leading-[1.1]"
+          >
+            Ahol az autód <span className="text-accent">visszanyeri</span> identitását.
+          </motion.h1>
+        </div>
+      </div>
+
+    </section>
   )
 }
+
+// ─── Stats Bar ────────────────────────────────────────────────────────────────
+const stats = [
+  { value: '200+', label: 'Befejezett munka' },
+  { value: '5★', label: 'Értékelés' },
+  { value: '3+', label: 'Év tapasztalat' },
+  { value: 'Bp. 1194', label: 'Hoffer Albert u. 41.' },
+]
+
+const StatsBar = () => (
+  <section className="relative z-10 w-full pt-8 pb-4">
+    <div className="max-w-7xl mx-auto px-4 py-6">
+      <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+        {stats.map((s, i) => (
+          <ScrollReveal key={i} delay={i * 0.1} direction="up">
+            <div className="flex flex-col items-center text-center px-4">
+              <span className="font-heading font-black text-2xl text-accent">{s.value}</span>
+              <span className="text-light/50 text-xs mt-1 tracking-wide">{s.label}</span>
+            </div>
+          </ScrollReveal>
+        ))}
+      </div>
+    </div>
+  </section>
+)
+
+// ─── Services Preview ─────────────────────────────────────────────────────────
+const serviceCards = [
+  {
+    icon: <Sparkles size={28} className="text-accent" />,
+    title: 'Külső részletezés',
+    desc: 'Polír, kerámia bevonat, fényszóró polírozás, rovareltávolítás. Az autód külseje újat varázslunk.',
+    link: '/szolgaltatasok',
+    img: '/images/gallery/group_95_1x.webp',
+  },
+  {
+    icon: <Layers size={28} className="text-accent" />,
+    title: 'Belső takarítás',
+    desc: 'Mélytisztítás, kárpit kezelés, bőrápolás, üveg tisztítás. Csillogó beltér minden alkalommal.',
+    link: '/szolgaltatasok',
+    img: '/images/gallery/group_100_1x.webp',
+  },
+  {
+    icon: <Shield size={28} className="text-accent" />,
+    title: 'Speciális kezelések',
+    desc: 'Kerámia bevonatok, prémium polírozás, kárpit kezelés külön csomagokban – maximális védelem.',
+    link: '/csomagok',
+    img: '/images/gallery/group_103_1x.webp',
+  },
+]
+
+const ServicesPreview = () => (
+  <section className="py-12 lg:py-16 px-4 bg-primary">
+    <div className="max-w-7xl mx-auto">
+      <ScrollReveal>
+        <p className="section-label text-center">Amit kínálok</p>
+        <h2 className="section-title text-center mb-16">
+          Prémium <span>szolgáltatások</span>
+        </h2>
+      </ScrollReveal>
+
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {serviceCards.map((card, i) => (
+          <ScrollReveal key={i} delay={i * 0.12}>
+            <div className="glass-card overflow-hidden group h-full flex flex-col">
+              {/* Image */}
+              <div className="relative h-52 overflow-hidden">
+                <img
+                  src={card.img}
+                  alt={card.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  loading="lazy"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-card via-card/40 to-transparent" />
+              </div>
+
+              {/* Content */}
+              <div className="p-6 flex flex-col flex-1">
+                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
+                  {card.icon}
+                </div>
+                <h3 className="font-heading font-bold text-xl text-light mb-3">{card.title}</h3>
+                <p className="text-muted text-sm leading-relaxed flex-1">{card.desc}</p>
+                <Link
+                  to={card.link}
+                  className="mt-5 flex items-center gap-2 text-accent text-sm font-semibold group/link"
+                >
+                  <span className="group-hover/link:underline underline-offset-2">Részletek</span>
+                  <ArrowRight size={14} className="transition-transform group-hover/link:translate-x-1" />
+                </Link>
+              </div>
+            </div>
+          </ScrollReveal>
+        ))}
+      </div>
+    </div>
+  </section>
+)
+
+// ─── Gallery Preview ──────────────────────────────────────────────────────────
+const galleryImages = [
+  '/images/gallery/image_125_1x.webp',
+  '/images/gallery/group_63_1x.webp',
+  '/images/gallery/group_65_1x.webp',
+  '/images/gallery/group_74_1x.webp',
+  '/images/gallery/group_61_1x.webp',
+  '/images/gallery/group_60_1x.webp',
+]
+
+const GalleryPreview = () => (
+  <section className="py-12 lg:py-16 px-4">
+    <div className="max-w-7xl mx-auto">
+      <ScrollReveal>
+        <p className="section-label text-center">Referenciáim</p>
+        <h2 className="section-title text-center mb-4">
+          Elkészült <span>munkáim</span>
+        </h2>
+        <p className="text-muted text-center max-w-xl mx-auto mb-14 text-sm leading-relaxed">
+          Minden egyes autó egy új kihívás. Nézd meg korábbi munkáimat és győződj meg a minőségről.
+        </p>
+      </ScrollReveal>
+
+      {/* Uniform grid */}
+      <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+        {galleryImages.map((src, i) => (
+          <ScrollReveal key={i} delay={i * 0.08} className="w-full h-full">
+            <div className="gallery-img relative h-52 md:h-64 w-full group">
+              <img
+                src={src}
+                alt={`Los Customs munka ${i + 1}`}
+                className="w-full h-full object-cover rounded-xl"
+                loading="lazy"
+              />
+              {/* Elegáns vízjel - Optikai középpontra igazítva a logó belső margója miatt */}
+              <div className="absolute -bottom-1 left-4 z-10 pointer-events-none opacity-35 group-hover:opacity-70 transition-opacity duration-500">
+                <img 
+                  src="/images/work/logo.png" 
+                  alt="Los Customs Vízjel" 
+                  className="w-20 sm:w-24 h-auto drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] filter grayscale contrast-125" 
+                />
+              </div>
+            </div>
+          </ScrollReveal>
+        ))}
+      </div>
+
+      <ScrollReveal delay={0.3}>
+        <div className="text-center mt-12">
+          <Link to="/galeria" className="btn-outline">
+            Összes referencia megtekintése
+          </Link>
+        </div>
+      </ScrollReveal>
+    </div>
+  </section>
+)
+
+// ─── CTA Banner ───────────────────────────────────────────────────────────────
+const CTABanner = () => (
+  <section className="relative py-12 lg:py-16 px-4 overflow-hidden">
+    {/* Golden gradient glow */}
+    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+      <div className="w-96 h-96 bg-accent/5 rounded-full blur-3xl" />
+    </div>
+
+    <div className="relative z-10 max-w-3xl mx-auto text-center">
+      <ScrollReveal>
+        <p className="section-label">Foglalj időpontot</p>
+        <h2 className="section-title mb-6">
+          Kész vagy a <span>prémium</span> élményre?
+        </h2>
+        <p className="text-muted text-base leading-relaxed mb-10 max-w-lg mx-auto">
+          Vedd fel velünk a kapcsolatot és egyezz meg egy időpontban.
+          Minden munka garanciával és maximális odafigyeléssel zárul.
+        </p>
+        <div className="flex flex-wrap gap-4 justify-center">
+          <Link to="/kapcsolat" className="btn-gold">
+            Kapcsolatfelvétel
+          </Link>
+          <a 
+            href="tel:+36709912761"
+            className="btn-outline flex items-center gap-2"
+          >
+            <Phone size={15} />
+            +36 70 991 2761
+          </a>
+        </div>
+      </ScrollReveal>
+    </div>
+  </section>
+)
+
+// ─── Home ─────────────────────────────────────────────────────────────────────
+const Home = () => (
+  <main>
+    <Hero />
+    <div className="honeycomb-bg w-full overflow-hidden">
+      <StatsBar />
+      <BeforeAfter />
+    </div>
+    <ServicesPreview />
+    <div className="honeycomb-bg w-full overflow-hidden">
+      <GalleryPreview />
+      <CTABanner />
+    </div>
+    <ContactSection />
+  </main>
+)
 
 export default Home

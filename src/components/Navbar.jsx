@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
 
 const navLinks = [
   { label: 'Főoldal', path: '/' },
@@ -11,91 +12,130 @@ const navLinks = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
   const location = useLocation()
 
   useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 20)
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  useEffect(() => {
     setIsOpen(false)
-  }, [location])
+    window.scrollTo({ top: 0, behavior: 'instant' })
+  }, [location.pathname])
+
+  // Lock body scroll when mobile menu is open
+  useEffect(() => {
+    document.body.style.overflow = isOpen ? 'hidden' : ''
+    return () => { document.body.style.overflow = '' }
+  }, [isOpen])
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-      scrolled ? 'bg-black/90 backdrop-blur-md shadow-lg' : 'bg-transparent'
-    }`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex items-center justify-between h-20">
-          {/* Logo */}
-          <Link to="/" className="font-heading font-bold text-2xl tracking-wider">
-            LOS <span className="text-accent">CUSTOMS</span>
-          </Link>
+    <>
+      <motion.nav
+        initial={{ y: -100, opacity: 0 }}
+        animate={{ y: 0, opacity: 1 }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
+        className="fixed top-0 left-0 right-0 z-50 bg-black/85 backdrop-blur-xl pt-1 lg:pt-3"
+      >
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex items-center justify-between h-20">
 
-          {/* Desktop Nav */}
-          <div className="hidden md:flex items-center gap-8">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`text-sm font-medium tracking-wide transition-colors duration-200 ${
-                  location.pathname === link.path
-                    ? 'text-accent'
-                    : 'text-light/70 hover:text-light'
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Link
-              to="/kapcsolat"
-              className="bg-accent text-black font-heading font-bold text-sm px-6 py-2.5 rounded-full tracking-wide hover:bg-accent-dark transition-colors duration-200"
-            >
-              Kapcsolat
+            {/* Logo */}
+            <Link to="/" className="flex items-center group">
+              <img src="/images/work/logo.png" alt="Los Customs Logo" className="h-[70px] w-auto transition-transform duration-300 group-hover:scale-105" />
             </Link>
-          </div>
 
-          {/* Mobile Menu Button */}
-          <button
-            className="md:hidden text-light p-2"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Menü"
-          >
-            {isOpen ? <X size={24} /> : <Menu size={24} />}
-          </button>
+            {/* Desktop Nav */}
+            <div className="hidden md:flex items-center gap-8">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.path}
+                  to={link.path}
+                  className={`relative text-sm font-medium tracking-wide transition-colors duration-200 group ${
+                    location.pathname === link.path
+                      ? 'text-accent'
+                      : 'text-light/60 hover:text-light'
+                  }`}
+                >
+                  {link.label}
+                  {location.pathname === link.path && (
+                    <motion.span
+                      layoutId="nav-underline"
+                      className="absolute -bottom-1 left-0 right-0 h-px bg-accent"
+                    />
+                  )}
+                </Link>
+              ))}
+              <Link to="/kapcsolat" className="btn-gold text-sm">
+                Kapcsolat
+              </Link>
+            </div>
+
+            {/* Mobile Menu Button */}
+            <button
+              className="md:hidden text-light/80 hover:text-accent transition-colors p-2 rounded-lg"
+              onClick={() => setIsOpen(!isOpen)}
+              aria-label="Menü megnyitása"
+            >
+              {isOpen ? <X size={22} /> : <Menu size={22} />}
+            </button>
+          </div>
         </div>
-      </div>
+      </motion.nav>
 
       {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-black/95 backdrop-blur-md border-t border-white/10">
-          <div className="px-4 py-6 flex flex-col gap-4">
-            {navLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={`text-base font-medium tracking-wide transition-colors ${
-                  location.pathname === link.path
-                    ? 'text-accent'
-                    : 'text-light/70 hover:text-light'
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <Link
-              to="/kapcsolat"
-              className="bg-accent text-black font-heading font-bold text-sm px-6 py-3 rounded-full tracking-wide text-center mt-2"
+      <AnimatePresence>
+        {isOpen && (
+          <>
+            <motion.div
+              key="backdrop"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              className="fixed inset-0 z-40 bg-black/60 backdrop-blur-sm md:hidden"
+              onClick={() => setIsOpen(false)}
+            />
+            <motion.div
+              key="menu"
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+              className="fixed top-0 right-0 bottom-0 z-50 w-72 bg-black border-l border-white/5 flex flex-col md:hidden"
             >
-              Kapcsolat
-            </Link>
-          </div>
-        </div>
-      )}
-    </nav>
+              <div className="flex items-center justify-between px-6 h-20 border-b border-white/5">
+                <img src="/images/work/logo.png" alt="Los Customs Logo" className="h-[60px] w-auto" />
+                <button onClick={() => setIsOpen(false)} className="text-light/70 hover:text-accent p-1">
+                  <X size={20} />
+                </button>
+              </div>
+              <div className="flex flex-col px-6 py-8 gap-1 flex-1">
+                {navLinks.map((link, i) => (
+                  <motion.div
+                    key={link.path}
+                    initial={{ opacity: 0, x: 20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.07 }}
+                  >
+                    <Link
+                      to={link.path}
+                      className={`flex items-center h-12 text-base font-medium tracking-wide border-b border-white/5 transition-colors ${
+                        location.pathname === link.path
+                          ? 'text-accent'
+                          : 'text-light/70 hover:text-light'
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                ))}
+              </div>
+              <div className="px-6 pb-8">
+                <Link to="/kapcsolat" className="btn-gold w-full text-center block">
+                  Kapcsolat
+                </Link>
+              </div>
+            </motion.div>
+          </>
+        )}
+      </AnimatePresence>
+    </>
   )
 }
 

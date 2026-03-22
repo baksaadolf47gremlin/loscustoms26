@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Icons Showcase</title>
+    <style>
+        body { background: #333; color: white; display: flex; flex-wrap: wrap; gap: 20px; font-family: sans-serif; padding: 20px; }
+        .icon { border: 1px solid #555; padding: 10px; display: flex; flex-direction: column; align-items: center; background: #222;}
+        img { max-width: 100px; max-height: 100px; }
+    </style>
+</head>
+<body>
+    <script>
+        const icons = [
+            "Group-11-1.png", "Group-12-1.png", "Group-13-1.png", "Group-14-3.png", 
+            "Group-15-2.png", "Group-20-2-1.png", "Group-21-1-1.png", "Group-22-1-1.png",
+            "Group-24-3-1.png", "Group-25-1-1.png", "Group-27-1-1.png", "Group-28.png",
+            "Group-29.png", "Group-30-1.png", "Group-30-2.png", "Group-31-1-e1753545468774.png",
+            "Group-32-1.png", "Group-33-1.png", "Group-37-1.png"
+        ];
+        icons.forEach(icon => {
+            const div = document.createElement('div');
+            div.className = 'icon';
+            div.innerHTML = `<img src="/icons/${icon}" alt="${icon}" /><p>${icon}</p>`;
+            document.body.appendChild(div);
+        });
+    </script>
+</body>
+</html>
