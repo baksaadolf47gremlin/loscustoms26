@@ -192,14 +192,11 @@ const GalleryPreview = () => (
                 className="w-full h-full object-cover rounded-xl"
                 loading="lazy"
               />
-              {/* Elegáns vízjel - Optikai középpontra igazítva a logó belső margója miatt */}
-              <div className="absolute -bottom-1 left-4 z-10 pointer-events-none opacity-35 group-hover:opacity-70 transition-opacity duration-500">
-                <img 
-                  src="/images/work/logo.png" 
-                  alt="Los Customs Vízjel" 
-                  className="w-20 sm:w-24 h-auto drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] filter grayscale contrast-125" 
-                />
-              </div>
+              {/* Elegáns vízjel - Módosítva egy gyors DOM csomópontra kép helyett a jobb teljesítményért */}
+              <div 
+                className="absolute -bottom-1 left-4 z-10 pointer-events-none opacity-35 group-hover:opacity-70 transition-opacity duration-500 w-20 sm:w-24 h-12 bg-[url('/images/work/logo.png')] bg-contain bg-no-repeat bg-bottom drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] grayscale contrast-125"
+                aria-hidden="true"
+              />
             </div>
           </ScrollReveal>
         ))}

@@ -97,19 +97,15 @@ const Gallery = () => {
 
       {/* Grid */}
       <section className="py-12 px-4 max-w-7xl mx-auto">
-        <motion.div
-          layout
-          className="columns-2 md:columns-3 lg:columns-4 gap-3 space-y-3"
-        >
+        <div className="columns-2 md:columns-3 lg:columns-4 gap-3 space-y-3">
           <AnimatePresence>
             {filtered.map((img, i) => (
               <motion.div
                 key={img.src}
-                layout
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.3, delay: i * 0.03 }}
+                transition={{ duration: 0.3, delay: i * 0.015 }}
                 className="gallery-img break-inside-avoid mb-3 cursor-pointer group relative"
                 onClick={() => setLightbox(img.src)}
               >
@@ -118,6 +114,7 @@ const Gallery = () => {
                   alt={`Los Customs referencia ${i + 1}`}
                   className="w-full h-auto rounded-xl object-cover block"
                   loading="lazy"
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 rounded-xl flex items-center justify-center">
                   <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-xs font-medium tracking-wider uppercase">
@@ -125,18 +122,15 @@ const Gallery = () => {
                   </span>
                 </div>
                 
-                {/* Elegáns vízjel - Optikai középpontra igazítva a logó belső margója miatt */}
-                <div className="absolute -bottom-1 left-4 z-10 pointer-events-none opacity-35 group-hover:opacity-70 transition-opacity duration-500">
-                  <img 
-                    src="/images/work/logo.png" 
-                    alt="Los Customs Vízjel" 
-                    className="w-20 sm:w-24 h-auto drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] filter grayscale contrast-125" 
-                  />
-                </div>
+                {/* Elegáns vízjel minimalista div-ként */}
+                <div 
+                  className="absolute -bottom-1 left-4 z-10 pointer-events-none opacity-35 group-hover:opacity-70 transition-opacity duration-500 w-20 sm:w-24 h-12 bg-[url('/images/work/logo.png')] bg-contain bg-no-repeat bg-bottom drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] grayscale contrast-125"
+                  aria-hidden="true"
+                />
               </motion.div>
             ))}
           </AnimatePresence>
-        </motion.div>
+        </div>
       </section>
 
       {/* Lightbox */}
