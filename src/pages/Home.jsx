@@ -31,10 +31,16 @@ const Hero = () => {
         </video>
         
         {/* Subtle Film Grain Noise Overlay to hide video banding and add cinematic GTA V mood */}
-        <div className="noise-overlay absolute inset-0 mix-blend-overlay opacity-50 z-10 pointer-events-none" />
+        <div 
+          className="noise-overlay absolute inset-0 mix-blend-overlay opacity-50 z-10 pointer-events-none transform-gpu"
+          style={{ transform: 'translateZ(0)', backfaceVisibility: 'hidden', willChange: 'transform' }}
+        />
 
         {/* Content safely anchored EXACTLY in the top-left corner - Now wider and less tall */}
-        <div className="absolute top-0 left-0 z-20 w-[90%] max-w-[340px] sm:max-w-[500px] lg:max-w-[650px] xl:max-w-[750px] bg-black/50 backdrop-blur-lg p-6 sm:p-10 lg:px-14 lg:py-10 flex flex-col items-start text-left rounded-br-2xl shadow-[20px_20px_60px_rgba(0,0,0,0.5)]">
+        <div 
+          className="absolute top-0 left-0 z-20 w-[90%] max-w-[340px] sm:max-w-[500px] lg:max-w-[650px] xl:max-w-[750px] bg-black/50 backdrop-blur-lg p-6 sm:p-10 lg:px-14 lg:py-10 flex flex-col items-start text-left rounded-br-2xl shadow-[20px_20px_60px_rgba(0,0,0,0.5)] transform-gpu"
+          style={{ transform: 'translateZ(0)', backfaceVisibility: 'hidden', willChange: 'transform' }}
+        >
           <motion.p
             initial={{ opacity: 0, x: -20 }}
             animate={{ opacity: 1, x: 0 }}
