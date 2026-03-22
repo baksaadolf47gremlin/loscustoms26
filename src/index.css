@@ -133,7 +133,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Honeycomb background texture */
 .honeycomb-bg {
   position: relative;
-  background-image: url('/images/honeycomb.png');
+  background-image: url('/images/honeycomb.webp');
   background-size: 600px auto;
   background-repeat: repeat;
 }
@@ -172,7 +172,7 @@ h1, h2, h3, h4, h5, h6 {
 /* Darker variant for footer */
 .honeycomb-bg-dark {
   position: relative;
-  background-image: url('/images/honeycomb.png');
+  background-image: url('/images/honeycomb.webp');
   background-size: 500px auto;
   background-repeat: repeat;
 }
