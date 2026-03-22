@@ -15,7 +15,7 @@ const Hero = () => {
       {/* Framed Video Container - Perfect 16:9 aspect ratio limited by a smart max-width so it always stays on screen natively without cropping! */}
       <div className="relative w-[96%] max-w-[1440px] aspect-video mx-auto overflow-hidden rounded-xl sm:rounded-2xl shadow-[0_0_80px_rgba(0,0,0,0.8)] bg-black flex flex-col items-start justify-start">
         
-        {/* CSS Image Enhancements applied directly to the video tag */}
+        {/* A videó natívan, filterek nélkül futtatva a MAXIMÁLIS teljesítményért */}
         <video
           ref={videoRef}
           autoPlay
@@ -23,22 +23,22 @@ const Hero = () => {
           loop
           playsInline
           preload="auto"
-          className="absolute inset-0 w-full h-full object-cover brightness-105 contrast-125 saturate-[1.15] z-0"
+          className="absolute inset-0 w-full h-full object-cover z-0"
         >
           {/* Multiple sources for responsive WebM and optimized MP4 streaming */}
           <source src="/videos/hero.webm" type="video/webm" />
           <source src="/videos/hero.mp4" type="video/mp4" />
         </video>
         
-        {/* Subtle Film Grain Noise Overlay to hide video banding and add cinematic GTA V mood */}
+        {/* Film Grain Noise Override - Mix-blend mód eltávolítva a GPU megkímélése és a villódzás megszüntetése végett */}
         <div 
-          className="noise-overlay absolute inset-0 mix-blend-overlay opacity-50 z-10 pointer-events-none transform-gpu"
+          className="noise-overlay absolute inset-0 opacity-15 z-10 pointer-events-none transform-gpu"
           style={{ transform: 'translateZ(0)', backfaceVisibility: 'hidden', willChange: 'transform' }}
         />
 
-        {/* Content safely anchored EXACTLY in the top-left corner - Now wider and less tall */}
+        {/* Content - Backdrop-blur kiirtva, ami a videó felett befrageltette a böngészőt! Helyette elegáns, natív áttetsző fekete doboz (bg-black/75). */}
         <div 
-          className="absolute top-0 left-0 z-20 w-[90%] max-w-[340px] sm:max-w-[500px] lg:max-w-[650px] xl:max-w-[750px] bg-black/50 backdrop-blur-lg p-6 sm:p-10 lg:px-14 lg:py-10 flex flex-col items-start text-left rounded-br-2xl shadow-[20px_20px_60px_rgba(0,0,0,0.5)] transform-gpu"
+          className="absolute top-0 left-0 z-20 w-[90%] max-w-[340px] sm:max-w-[500px] lg:max-w-[650px] xl:max-w-[750px] bg-black/75 filter-none p-6 sm:p-10 lg:px-14 lg:py-10 flex flex-col items-start text-left rounded-br-2xl shadow-[20px_20px_60px_rgba(0,0,0,0.8)] transform-gpu"
           style={{ transform: 'translateZ(0)', backfaceVisibility: 'hidden', willChange: 'transform' }}
         >
           <motion.p
