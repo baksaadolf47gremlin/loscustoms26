@@ -49,7 +49,7 @@ const ContactSection = () => {
       {/* Feltöltött, sötét garázs háttérkép */}
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-        style={{ backgroundImage: `url('/images/contact-bg.jpg.jpg')` }}
+        style={{ backgroundImage: `url('/images/contact-bg.webp')` }}
       />
       
       {/* Nagyon erős, sötétítő réteg a háttérködös, drámai hatásért (85% fekete) */}
