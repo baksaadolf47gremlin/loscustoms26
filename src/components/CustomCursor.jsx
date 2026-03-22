@@ -82,32 +82,31 @@ const CustomCursor = () => {
 
   return (
     <>
-      {/* Egyedi Gamer / San Andreas szerű "tömör nyíl" kurzor */}
+      {/* Egyedi Gamer / San Andreas szerű "tömör nyíl" és kéz kurzor */}
       <motion.div
         className="fixed top-0 left-0 pointer-events-none z-[9999]"
         style={{
           x: mouseX,
           y: mouseY,
-          marginLeft: '-5px',
-          marginTop: '-2px',
-          scale: isClicked ? 0.8 : isHovering ? 1.2 : 1,
-          transformOrigin: '5px 2px', // Hoverkor innen nyílik ki (a mutató hegyéből)
+          // Képes kurzor beállítása - Teljesen megegyező kurzor méret
+          marginLeft: isHovering ? '-7px' : '-5px',
+          marginTop: isHovering ? '-2px' : '-2px',
+          scale: isClicked ? 0.8 : 1, // Kicsinyítjük a felesleges 1.2-es hover növelést is, hogy ne lufizódjon fel
+          transformOrigin: isHovering ? '7px 2px' : '5px 2px',
         }}
       >
-        <svg width="20" height="24" viewBox="-5 -2 20 24" xmlns="http://www.w3.org/2000/svg" className="drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
-          <path 
-            // Dinamikus alakváltás normál nyíl és egy sokkal kidolgozottabb kéz ikon (hover) között
-            d={isHovering 
-               ? "M -1 9 L -1 1 A 1 1 0 0 1 1 1 L 1 5 L 1 2 A 1 1 0 0 1 3 2 L 3 5.5 L 3 3 A 1 1 0 0 1 5 3 L 5 6 L 5 4 A 1 1 0 0 1 7 4 L 7 10 C 7 13 4 15 1 15 L -1 15 C -4 15 -5 13 -5 11 L -5 8 A 1.5 1.5 0 0 1 -2 8 Z"
-               : "M 0 0 L 0 16 L 4 12 L 7 19 L 10 18 L 7 11 L 13 11 Z"
-            } 
-            fill={isHovering ? "#FFFFFF" : "#E5A800"} 
-            stroke="#000000" 
-            strokeWidth="1.5" 
-            strokeLinejoin="round" 
-            strokeLinecap="round"
+        {isHovering ? (
+          <img 
+            src="/middlefinger.png" 
+            alt="Middle Finger Cursor" 
+            className="w-5 h-auto drop-shadow-md pointer-events-none" // w-5 pontosan 20px-nek felel meg
+            style={{ filter: 'drop-shadow(0px 2px 4px rgba(0,0,0,0.5))' }}
           />
-        </svg>
+        ) : (
+          <svg width="20" height="24" viewBox="-5 -2 20 24" fill="#E5A800" stroke="#000000" strokeWidth="1.5" strokeLinejoin="round" strokeLinecap="round" className="drop-shadow-[0_2px_4px_rgba(0,0,0,0.5)]">
+            <path d="M 0 0 L 0 16 L 4 12 L 7 19 L 10 18 L 7 11 L 13 11 Z" />
+          </svg>
+        )}
       </motion.div>
 
       {/* Egyedi kattintás animáció! Egy vékony kiterjedő akciójel, pontosan a hegyéből indulva */}
