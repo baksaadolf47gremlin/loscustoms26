@@ -107,7 +107,7 @@ const CustomCursor = () => {
           // Képes kurzor beállítása - Teljesen megegyező kurzor méret
           marginLeft: isHovering ? '-7px' : '-5px',
           marginTop: isHovering ? '-2px' : '-2px',
-          scale: isClicked ? 0.8 : 1, // Kicsinyítjük a felesleges 1.2-es hover növelést is, hogy ne lufizódjon fel
+          scale: isClicked ? 0.8 : isHovering ? 1.2 : 1, // Visszatettük a hover animációt (1.2-es nagyítás)!
           transformOrigin: isHovering ? '7px 2px' : '5px 2px',
         }}
       >
