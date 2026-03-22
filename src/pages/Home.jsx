@@ -23,7 +23,7 @@ const Hero = () => {
           loop
           playsInline
           preload="auto"
-          poster="/images/work/hero-bg.png"
+          poster="/images/work/hero-bg.webp"
           className="absolute inset-0 w-full h-full object-cover brightness-105 contrast-125 saturate-[1.15] z-0"
         >
           {/* Multiple sources for responsive WebM and optimized MP4 streaming */}

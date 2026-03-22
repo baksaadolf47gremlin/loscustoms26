@@ -11,11 +11,10 @@ root.render(
   </StrictMode>
 )
 
-// Hide splash screen
+// Hide splash screen instantly
 const splash = document.getElementById('splash')
 if (splash) {
-  setTimeout(() => {
-    splash.style.opacity = '0'
-    setTimeout(() => splash.remove(), 600)
-  }, 300)
+  splash.style.transition = 'opacity 0.3s ease-out'
+  splash.style.opacity = '0'
+  setTimeout(() => splash.remove(), 300)
 }
