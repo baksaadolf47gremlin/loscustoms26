@@ -125,14 +125,6 @@ const Gallery = () => {
                   </span>
                 </div>
                 
-                {/* Elegáns vízjel - Optikai középpontra igazítva a logó belső margója miatt */}
-                <div className="absolute -bottom-1 left-4 z-10 pointer-events-none opacity-35 group-hover:opacity-70 transition-opacity duration-500">
-                  <img 
-                    src="/images/work/logo.png" 
-                    alt="Los Customs Vízjel" 
-                    className="w-20 sm:w-24 h-auto drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] filter grayscale contrast-125" 
-                  />
-                </div>
               </motion.div>
             ))}
           </AnimatePresence>
