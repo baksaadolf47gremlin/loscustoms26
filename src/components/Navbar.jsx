@@ -13,6 +13,9 @@ const navLinks = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const location = useLocation()
+  const [isMounted, setIsMounted] = useState(false)
+
+  useEffect(() => setIsMounted(true), [])
 
   useEffect(() => {
     setIsOpen(false)
@@ -54,7 +57,7 @@ const Navbar = () => {
                   }`}
                 >
                   {link.label}
-                  {location.pathname === link.path && (
+                  {isMounted && location.pathname === link.path && (
                     <motion.span
                       layoutId="nav-underline"
                       className="absolute -bottom-1 left-0 right-0 h-[2px] bg-accent"
