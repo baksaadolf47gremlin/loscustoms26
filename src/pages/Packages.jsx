@@ -18,7 +18,7 @@ const treatments = [
     name: 'Kerámia bevonatok',
     price: '8.000',
     badge: 'Legjobb védelem',
-    img: '/images/gallery/group_96_1x.webp',
+    img: '/images/gallery/keramiabevonat.webp',
     items: [
       'Kerámia bevonatok',
       'Teljes karosszéria',
