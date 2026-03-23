@@ -1,0 +1,9 @@
+e86a8af Ultimate chromium mask-image fix plus hover restore
+4c9fa5e Ultimate performance optimization to fix backdrop filter bug
+92d4f5e Fix hero section card hover compositing rendering bug
+fa9119f Fix Vercel image 404 by importing asset locally
+1dd67b8 Restore hover inflation effect
+031d8f1 Sync all final changes for Unlighthouse test
+a72e67f Update Cursor performance and UI
+7bfa96e Fixed scrolling cursor hover bug, added gallery watermarks, styled autofill fields
+e724261 feat: initial Los Customs project setup

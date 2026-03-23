@@ -4,19 +4,19 @@ import { Link } from 'react-router-dom'
 const projects = [
   {
     title: 'Lámpa polír',
-    image: '/images/work/image-10.png',
+    image: '/images/work/image-10.webp',
   },
   {
     title: 'Tetőkárpit csere',
-    image: '/images/work/image-14-1.png',
+    image: '/images/work/image-14-1.webp',
   },
   {
     title: 'Teljes kaszni',
-    image: '/images/work/image-17.png',
+    image: '/images/work/image-17.webp',
   },
   {
     title: 'Teljes belső tisztítás',
-    image: '/images/work/image-43-e1753564268674.png',
+    image: '/images/work/image-43-e1753564268674.webp',
   },
 ]
 
@@ -55,6 +55,7 @@ const BeforeAfter = () => {
                   src={project.image} 
                   alt={project.title} 
                   className="w-full h-full object-cover opacity-90 group-hover:opacity-100 transition-opacity duration-300"
+                  loading="lazy"
                 />
               </div>
               {/* Title */}
