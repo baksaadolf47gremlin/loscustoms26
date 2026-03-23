@@ -122,7 +122,7 @@ const Footer = () => {
               Prémium autódetailing · Budapest
             </div>
             <div className="md:col-span-4 lg:col-span-4 lg:text-left text-light/50 hover:text-light transition-colors">
-              <Link to="#">ÁSZF · SÜTIK</Link>
+              <Link to="/aszf" className="hover:text-accent transition-colors">ÁSZF</Link>
             </div>
           </div>
         </div>
