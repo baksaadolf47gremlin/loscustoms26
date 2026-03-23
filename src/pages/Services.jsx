@@ -4,23 +4,9 @@ import ScrollReveal from '../components/ScrollReveal'
 
 const detailingPackages = [
   {
-    id: 'protection',
-    tag: 'protection',
-    title: 'Kerámia bevonat',
-    icon: <Shield className="text-accent mb-4" size={32} />,
-    prices: [
-      { label: '1 éves kerámia bevonat', price: '49.000 Ft' },
-      { label: '3 éves kerámia bevonat', price: '99.000 Ft' },
-      { label: '5 éves kerámia bevonat', price: '149.000 Ft' },
-    ],
-    items: [],
-    color: 'border-accent/40',
-    highlight: true,
-  },
-  {
     id: 'detailing-1',
-    tag: 'detailing',
-    title: 'Fényesítő polírozás',
+    tag: 'Fényesítő polírozás',
+    title: 'Alap Szolgáltatásaim',
     icon: <Sparkles className="text-accent mb-4" size={32} />,
     priceText: 'Kezdő ár',
     priceValue: '59.000 - 69.000 Ft',
@@ -38,11 +24,11 @@ const detailingPackages = [
   },
   {
     id: 'detailing-2',
-    tag: 'detailing',
-    title: 'Korrekciós polírozás',
+    tag: 'Több lépcsős fényezés korrekciós polírozás',
+    title: 'Prémium Detailing Opciók',
     icon: <Sparkles className="text-accent mb-4" size={32} />,
     priceText: 'Kezdő ár',
-    priceValue: '99.000 - 169.000 Ft',
+    priceValue: '99.000 Ft - 169.000 Ft',
     items: [
       'Alapos külső mosás',
       'Bogár oldás',
@@ -58,8 +44,8 @@ const detailingPackages = [
   },
   {
     id: 'washing',
-    tag: 'Külső mosás',
-    title: 'Alapos külső mosás (1-2 óra)',
+    tag: '(1-2 óra)',
+    title: 'Külső mosás opciók',
     icon: <Droplets className="text-accent mb-4" size={32} />,
     priceText: 'Kezdő ár',
     priceValue: '13.000 Ft-tól',
@@ -73,6 +59,20 @@ const detailingPackages = [
       'Alapvédelem',
     ],
     color: 'border-white/10',
+  },
+  {
+    id: 'protection',
+    tag: '1-5 éves kerámia bevonat',
+    title: 'Autóvédelem',
+    icon: <Shield className="text-accent mb-4" size={32} />,
+    prices: [
+      { label: '1 éves', price: '49.000 Ft' },
+      { label: '3 éves', price: '99.000 Ft' },
+      { label: '5 éves', price: '149.000 Ft' },
+    ],
+    items: [],
+    color: 'border-accent/40',
+    highlight: true,
   },
 ]
 
