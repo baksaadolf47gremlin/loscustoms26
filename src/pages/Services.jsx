@@ -1,185 +1,186 @@
 import { Link } from 'react-router-dom'
-import { Check, Phone } from 'lucide-react'
+import { Check, Phone, Shield, Sparkles, Droplets } from 'lucide-react'
 import ScrollReveal from '../components/ScrollReveal'
 
-const externalPackages = [
+const detailingPackages = [
   {
-    name: 'Basic Külső',
-    price: '8.000',
-    tag: 'Alap',
-    color: 'border-white/10',
-    items: [
-      'Műanyag trimelemes ápolás',
-      'Kültéri felületek törlése',
-      'Gumik kenése',
-    ]
-  },
-  {
-    name: 'Premium Külső',
-    price: '25.000',
-    tag: 'Népszerű',
+    id: 'protection',
+    tag: 'protection',
+    title: 'Kerámia bevonat',
+    icon: <Shield className="text-accent mb-4" size={32} />,
+    prices: [
+      { label: '1 éves kerámia bevonat', price: '49.000 Ft' },
+      { label: '3 éves kerámia bevonat', price: '99.000 Ft' },
+      { label: '5 éves kerámia bevonat', price: '149.000 Ft' },
+    ],
+    items: [],
     color: 'border-accent/40',
     highlight: true,
-    items: [
-      'Műanyag ápolás',
-      'Rovareltávolítás',
-      'Motortér tisztítás',
-      'Fényszóró polírozás',
-      'Külső mosás és szárítás',
-    ]
   },
   {
-    name: 'Luxury Külső',
-    price: '100.000',
-    tag: 'Prémium',
-    color: 'border-accent-dark/30',
+    id: 'detailing-1',
+    tag: 'detailing',
+    title: 'Fényesítő polírozás',
+    icon: <Sparkles className="text-accent mb-4" size={32} />,
+    priceText: 'Kezdő ár',
+    priceValue: '59.000 - 69.000 Ft',
     items: [
-      'Minden Premium csomag',
-      'Üveg kerámia bevonat',
-      'Fényes polírozás',
-      'Teljes karosszéria kezelés',
-      'Prémium viasz réteg',
-    ]
+      'Alapos külső mosás',
+      'Bogár oldás',
+      'Szálló rozsda eltávolítása',
+      'Felni tisztítás',
+      'Ablakok külső tisztítása',
+      'Külső műanyagok ápolása',
+      'Gumi ápolás',
+      'Egy lépcsős fényesítő polírozás',
+    ],
+    color: 'border-white/10',
+  },
+  {
+    id: 'detailing-2',
+    tag: 'detailing',
+    title: 'Korrekciós polírozás',
+    icon: <Sparkles className="text-accent mb-4" size={32} />,
+    priceText: 'Kezdő ár',
+    priceValue: '99.000 - 169.000 Ft',
+    items: [
+      'Alapos külső mosás',
+      'Bogár oldás',
+      'Szálló rozsda eltávolítása',
+      'Felni tisztítás',
+      'Ablakok külső tisztítása',
+      'Külső műanyagok ápolása',
+      'Gumi ápolás',
+      'Több lépcsős fényezés korrekciós polírozás (90-100% karc eltávolítás)',
+    ],
+    color: 'border-accent/40',
+    highlight: true,
+  },
+  {
+    id: 'washing',
+    tag: 'Külső mosás',
+    title: 'Alapos külső mosás (1-2 óra)',
+    icon: <Droplets className="text-accent mb-4" size={32} />,
+    priceText: 'Kezdő ár',
+    priceValue: '13.000 Ft-tól',
+    items: [
+      'Alapos külső mosás',
+      'Bogár oldás',
+      'Felni tisztítás',
+      'Szálló rozsda eltávolítása és szárítás',
+      'Kézi autómosás',
+      'Szárítás',
+      'Alapvédelem',
+    ],
+    color: 'border-white/10',
   },
 ]
 
-const internalPackages = [
-  {
-    name: 'Basic Belső',
-    price: '8.000',
-    tag: 'Alap',
-    color: 'border-white/10',
-    items: [
-      'Porszívózás',
-      'Ajtókeret tisztítás',
-      'Ablak tisztítás',
-      'Por eltávolítás',
-      '„Ibiza" autó parfüm',
-    ]
-  },
-  {
-    name: 'Premium Belső',
-    price: '35.000',
-    tag: 'Népszerű',
-    color: 'border-accent/40',
-    highlight: true,
-    items: [
-      'Minden Basic csomag',
-      'Műanyag elemek kondicionálása',
-      'Kárpit tisztítás',
-      'Bőr ülőfelület ápolás',
-      'Szőnyeg szampon',
-    ]
-  },
-  {
-    name: 'Luxury Belső',
-    price: '40.000',
-    tag: 'Prémium',
-    color: 'border-accent-dark/30',
-    items: [
-      'Minden Premium csomag',
-      'Mélyüléstisztítás',
-      'Mennyezet tisztítás',
-      'Teljes beltér fertőtlenítés',
-      'Prémium illatosítás',
-    ]
-  },
-]
-
-const PackageCard = ({ pkg, delay = 0 }) => (
+const CustomPackageCard = ({ pkg, delay = 0 }) => (
   <ScrollReveal delay={delay}>
-    <div className={`relative flex flex-col h-full rounded-2xl border ${pkg.color} bg-card shadow-card p-7
+    <div className={`relative flex flex-col h-full rounded-2xl border ${pkg.color} bg-card shadow-card p-6 md:p-8
       transition-all duration-300 hover:shadow-gold ${pkg.highlight ? 'ring-1 ring-accent/30' : ''}`}>
       {pkg.highlight && (
-        <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-black text-xs font-heading font-bold px-4 py-1 rounded-full tracking-wider">
-          {pkg.tag}
+        <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-black text-[10px] font-heading font-bold px-4 py-1 rounded-full tracking-widest uppercase">
+          Prémium
         </span>
       )}
+      
       {!pkg.highlight && (
-        <span className="text-[10px] font-heading font-bold tracking-[0.2em] text-muted uppercase mb-3 block">{pkg.tag}</span>
+        <span className="text-[10px] font-heading font-bold tracking-[0.2em] text-muted uppercase mb-2 block">{pkg.tag}</span>
       )}
-      <h3 className="font-heading font-extrabold text-xl text-light mb-2">{pkg.name}</h3>
-      <div className="flex items-end gap-1 mb-6">
-        <span className="font-heading font-black text-3xl text-accent">{pkg.price}</span>
-        <span className="text-muted text-sm mb-1">Ft</span>
+      {pkg.highlight && (
+         <span className="text-[10px] font-heading font-bold tracking-[0.2em] text-accent uppercase mb-2 block mt-2">{pkg.tag}</span>
+      )}
+
+      <div className="flex justify-between items-start mb-4">
+        <h3 className="font-heading font-extrabold text-2xl text-light">{pkg.title}</h3>
+        <div className="hidden sm:block flex-shrink-0 ml-4 opacity-50">
+          {pkg.icon}
+        </div>
       </div>
-      <ul className="flex flex-col gap-2.5 flex-1">
-        {pkg.items.map((item, i) => (
-          <li key={i} className="flex items-start gap-2.5 text-sm text-light/70">
-            <Check size={14} className="text-accent mt-0.5 flex-shrink-0" />
-            {item}
-          </li>
-        ))}
-      </ul>
-      <Link
-        to="/kapcsolat"
-        className={`mt-8 w-full text-center py-3 rounded-full font-heading font-bold text-sm tracking-wider transition-all duration-300
-          ${pkg.highlight
-            ? 'bg-accent text-black hover:bg-accent-light hover:shadow-gold'
-            : 'border border-white/15 text-light/70 hover:border-accent hover:text-accent'}`}
-      >
-        Időpont foglalás
-      </Link>
+
+      <div className="flex flex-col gap-1 mb-6 mt-auto border-b border-white/5 pb-6">
+        {pkg.prices ? (
+          <div className="flex flex-col gap-3 mt-4">
+            {pkg.prices.map((p, i) => (
+              <div key={i} className="flex justify-between items-center bg-white/5 p-3 rounded-lg border border-white/5">
+                <span className="text-light/80 text-sm font-medium">{p.label}</span>
+                <span className="font-heading font-bold text-accent">{p.price}</span>
+              </div>
+            ))}
+          </div>
+        ) : (
+          <>
+             <span className="text-muted text-xs uppercase tracking-widest font-heading font-bold">{pkg.priceText}</span>
+             <span className="font-heading font-black text-3xl text-accent block">{pkg.priceValue}</span>
+          </>
+        )}
+      </div>
+
+      {pkg.items && pkg.items.length > 0 && (
+        <ul className="flex flex-col gap-3 flex-1 mb-8">
+          {pkg.items.map((item, i) => (
+            <li key={i} className="flex items-start gap-3 text-sm text-light/70 leading-relaxed">
+              <Check size={16} className="text-accent mt-0.5 flex-shrink-0" />
+              <span>{item}</span>
+            </li>
+          ))}
+        </ul>
+      )}
+
+      <div className="mt-auto pt-4">
+        <Link
+          to="/kapcsolat"
+          className={`block w-full text-center py-4 rounded-xl font-heading font-bold text-sm tracking-wider transition-all duration-300
+            ${pkg.highlight
+              ? 'bg-accent text-black hover:bg-accent-light hover:shadow-gold'
+              : 'bg-white/5 text-light hover:bg-accent hover:text-black border border-white/10 hover:border-transparent'}`}
+        >
+          Időpont foglalás
+        </Link>
+      </div>
     </div>
   </ScrollReveal>
 )
 
 const Services = () => (
   <main className="bg-primary min-h-screen pt-20">
-    {/* Page Header */}
-    <div className="honeycomb-bg py-20 px-4 overflow-hidden">
+    <div className="honeycomb-bg py-24 px-4 overflow-hidden relative">
       <div className="!absolute inset-0 flex items-center justify-center pointer-events-none">
-        <div className="w-[500px] h-[300px] bg-accent/5 rounded-full blur-3xl" />
+        <div className="w-[600px] h-[400px] bg-accent/5 rounded-full blur-3xl" />
       </div>
-      <div className="relative max-w-7xl mx-auto text-center">
+      <div className="relative max-w-4xl mx-auto text-center">
         <ScrollReveal>
-          <p className="section-label">Kínálatom</p>
-          <h1 className="section-title mb-4">
-            Autódetailing <span>csomagok</span>
+          <p className="section-label tracking-widest text-accent mb-4">Autó detailing</p>
+          <h1 className="text-4xl md:text-6xl font-black text-light font-poppins mb-6">
+            Ragyogás és Védelem <span>mesterfokon</span>
           </h1>
-          <p className="text-muted max-w-xl mx-auto text-sm leading-relaxed">
-            Válassz a külső és belső detailing csomagjaim közül. Minden ár tartalmazza a munkadíjat és az anyagköltséget.
+          <p className="text-muted text-base md:text-lg leading-relaxed max-w-2xl mx-auto">
+            Válaszd ki az autód állapotának és igényeidnek megfelelő professzionális detailing csomagot. 
+            Minden feltüntetett ár bruttó kezdőár, mely az anyagköltséget és a munkadíjat is magában foglalja.
           </p>
         </ScrollReveal>
       </div>
     </div>
 
-    {/* External */}
     <section className="py-20 px-4 max-w-7xl mx-auto">
-      <ScrollReveal>
-        <span className="gold-line" />
-        <h2 className="section-title mb-12">Külső <span>csomagok</span></h2>
-      </ScrollReveal>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-        {externalPackages.map((pkg, i) => (
-          <PackageCard key={i} pkg={pkg} delay={i * 0.1} />
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
+        {detailingPackages.map((pkg, i) => (
+          <CustomPackageCard key={i} pkg={pkg} delay={i * 0.1} />
         ))}
       </div>
     </section>
 
-    {/* Divider */}
-    <div className="border-t border-white/5 mx-4" />
-
-    {/* Internal */}
-    <section className="py-20 px-4 max-w-7xl mx-auto">
+    <div className="py-20 px-4 text-center border-t border-white/5 bg-secondary/50 relative overflow-hidden">
+      <div className="absolute inset-0 honeycomb-bg opacity-30"></div>
       <ScrollReveal>
-        <span className="gold-line" />
-        <h2 className="section-title mb-12">Belső <span>csomagok</span></h2>
-      </ScrollReveal>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-start">
-        {internalPackages.map((pkg, i) => (
-          <PackageCard key={i} pkg={pkg} delay={i * 0.1} />
-        ))}
-      </div>
-    </section>
-
-    {/* Bottom CTA */}
-    <div className="py-16 px-4 text-center border-t border-white/5 bg-secondary">
-      <ScrollReveal>
-        <p className="text-muted text-sm mb-6 max-w-md mx-auto">Nem találtad meg, amit keresel? Egyedi igényekre is vállalok munkát – írj vagy hívj!</p>
-        <div className="flex flex-wrap gap-4 justify-center">
-          <Link to="/kapcsolat" className="btn-gold">Kapcsolatfelvétel</Link>
-          <a href="tel:+36709912761" className="btn-outline flex items-center gap-2"><Phone size={14} />+36 70 991 2761</a>
+        <div className="relative z-10">
+          <p className="text-white/80 text-lg mb-8 max-w-xl mx-auto font-medium">Bizonytalan vagy, hogy melyik kezelésre van szüksége az autódnak? Hozzád szabott árajánlatért keress bizalommal!</p>
+          <div className="flex flex-wrap gap-4 justify-center">
+            <Link to="/kapcsolat" className="btn-gold shadow-gold">Ingyenes konzultáció</Link>
+            <a href="tel:+36307582472" className="btn-outline flex items-center gap-2 bg-black/40"><Phone size={16} className="text-accent" />+36 30 758 2472</a>
+          </div>
         </div>
       </ScrollReveal>
     </div>
