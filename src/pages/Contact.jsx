@@ -64,7 +64,7 @@ const Contact = () => {
     <main className="bg-primary min-h-screen pt-20">
       {/* Header */}
       <div className="honeycomb-bg py-20 px-4 overflow-hidden">
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+        <div className="!absolute inset-0 flex items-center justify-center pointer-events-none">
           <div className="w-[500px] h-[300px] bg-accent/5 rounded-full blur-3xl" />
         </div>
         <div className="relative max-w-7xl mx-auto text-center">
