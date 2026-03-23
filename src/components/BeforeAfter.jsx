@@ -6,6 +6,7 @@ const pairs = [
     title: 'Lámpa polírozás',
     before: '/images/before-after/image_44_before_4x.webp',
     after: '/images/before-after/image_44_4x.webp',
+    styleBefore: { transform: 'scale(1.45) translate(-4%, 3%)' }
   },
   {
     title: 'Belső takarítás',
@@ -19,8 +20,8 @@ const pairs = [
   },
   {
     title: 'Csomagtér takarítás',
-    before: '/images/before-after/img_2140_2_4x.webp',
-    after: '/images/before-after/img_2127_1_4x.webp',
+    before: '/images/before-after/img_2127_1_4x.webp',
+    after: '/images/before-after/img_2140_2_4x.webp',
   },
 ]
 
@@ -93,6 +94,7 @@ const SliderCard = ({ pair, index }) => {
           className="absolute inset-0 w-full h-full object-cover"
           loading="lazy"
           draggable={false}
+          style={pair.styleAfter}
         />
 
         {/* BEFORE (top layer — clipped to left of handle) */}
@@ -106,6 +108,7 @@ const SliderCard = ({ pair, index }) => {
             className="w-full h-full object-cover"
             loading="eager"
             draggable={false}
+            style={pair.styleBefore}
           />
         </div>
 
