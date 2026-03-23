@@ -7,7 +7,7 @@ const treatments = [
     name: 'Polír csomag',
     price: '8.000',
     badge: null,
-    img: '/images/gallery/group_93_1x.webp',
+    img: '/images/gallery/polir-csomag.webp',
     items: [
       'Fényesítő polír',
       'Többlépéses polírozás',
