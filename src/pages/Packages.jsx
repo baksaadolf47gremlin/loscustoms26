@@ -65,11 +65,11 @@ const Packages = () => (
           <ScrollReveal key={i} delay={i * 0.12}>
             <div className="glass-card overflow-hidden group flex flex-col h-full">
               {/* Image */}
-              <div className="relative h-64 overflow-hidden bg-black/40">
+              <div className="relative h-72 overflow-hidden bg-card/40">
                 <img
                   src={t.img}
                   alt={t.name}
-                  className="w-full h-full object-contain transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/10 to-transparent" />
