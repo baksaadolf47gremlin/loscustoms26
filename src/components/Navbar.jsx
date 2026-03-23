@@ -57,7 +57,14 @@ const Navbar = () => {
                   {location.pathname === link.path && (
                     <motion.span
                       layoutId="nav-underline"
-                      className="absolute -bottom-1 left-0 right-0 h-px bg-accent"
+                      className="absolute -bottom-1 left-0 right-0 h-[2px] bg-accent"
+                      initial={false}
+                      transition={{
+                        type: 'spring',
+                        stiffness: 350,
+                        damping: 30,
+                        mass: 1,
+                      }}
                     />
                   )}
                 </Link>
