@@ -5,22 +5,22 @@ const pairs = [
   {
     title: 'Lámpa polírozás',
     before: '/images/before-after/image_44.webp',
-    after: '/images/before-after/image_44_1x.webp',
+    after: '/images/before-after/image_44_4x.webp',
   },
   {
     title: 'Belső takarítás',
     before: '/images/before-after/image_33.webp',
-    after: '/images/before-after/image_33_1x.webp',
+    after: '/images/before-after/image_33_4x.webp',
   },
   {
     title: 'Felni polírozás',
-    before: '/images/before-after/img_9364_1_1x.webp',
-    after: '/images/before-after/img_9366_1_1x.webp',
+    before: '/images/before-after/img_9364_1_4x.webp',
+    after: '/images/before-after/img_9366_1_4x.webp',
   },
   {
     title: 'Csomagtér takarítás',
-    before: '/images/before-after/img_2140_2_1x.webp',
-    after: '/images/before-after/img_2127_1_1x.webp',
+    before: '/images/before-after/img_2140_2_4x.webp',
+    after: '/images/before-after/img_2127_1_4x.webp',
   },
 ]
 
