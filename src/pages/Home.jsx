@@ -96,21 +96,21 @@ const StatsBar = () => (
 // ─── Services Preview ─────────────────────────────────────────────────────────
 const serviceCards = [
   {
-    icon: <img src="/images/kulsoreszletezes_ikon.png" alt="Ikon" className="w-14 h-14 object-contain" />,
+    icon: <img src="/images/kulsoreszletezes_ikon.png" alt="Ikon" className="w-16 h-16 object-contain" />,
     title: 'Külső részletezés',
     desc: 'Polír, kerámia bevonat, fényszóró polírozás, rovareltávolítás. Az autód külseje újat varázslunk.',
     link: '/szolgaltatasok',
     img: '/images/kulosreszletezes.webp',
   },
   {
-    icon: <img src="/images/belsotakaritas_ikon.png" alt="Ikon" className="w-14 h-14 object-contain" />,
+    icon: <img src="/images/belsotakaritas_ikon.png" alt="Ikon" className="w-16 h-16 object-contain" />,
     title: 'Belső takarítás',
     desc: 'Mélytisztítás, kárpit kezelés, bőrápolás, üveg tisztítás. Csillogó beltér minden alkalommal.',
     link: '/szolgaltatasok',
     img: '/images/belsotakaritas.webp',
   },
   {
-    icon: <img src="/images/specialiskezelesek_ikon.png" alt="Ikon" className="w-14 h-14 object-contain" />,
+    icon: <img src="/images/specialiskezelesek_ikon.png" alt="Ikon" className="w-16 h-16 object-contain" />,
     title: 'Speciális kezelések',
     desc: 'Kerámia bevonatok, prémium polírozás, kárpit kezelés külön csomagokban – maximális védelem.',
     link: '/csomagok',
