@@ -4,12 +4,12 @@ import { motion } from 'framer-motion'
 const pairs = [
   {
     title: 'Lámpa polírozás',
-    before: '/images/before-after/image_44.webp',
+    before: '/images/before-after/image_44_before_4x.webp',
     after: '/images/before-after/image_44_4x.webp',
   },
   {
     title: 'Belső takarítás',
-    before: '/images/before-after/image_33.webp',
+    before: '/images/before-after/image_33_before_4x.webp',
     after: '/images/before-after/image_33_4x.webp',
   },
   {
