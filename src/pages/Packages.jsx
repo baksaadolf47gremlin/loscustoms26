@@ -69,7 +69,7 @@ const Packages = () => (
                 <img
                   src={t.img}
                   alt={t.name}
-                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover object-bottom transition-transform duration-700 group-hover:scale-105"
                   loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-card via-card/10 to-transparent" />
