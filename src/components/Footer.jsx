@@ -3,8 +3,8 @@ import { Phone, Mail, MapPin } from 'lucide-react'
 
 const navLinks = [
   { label: 'Főoldal', path: '/' },
-  { label: 'Szolgáltatások', path: '/szolgaltatasok' },
-  { label: 'Csomagok', path: '/csomagok' },
+  { label: 'Autó detailing', path: '/szolgaltatasok' },
+  { label: 'Egyéb szolgáltatásaim', path: '/csomagok' },
   { label: 'Galéria', path: '/galeria' },
   { label: 'Kapcsolat', path: '/kapcsolat' },
 ]

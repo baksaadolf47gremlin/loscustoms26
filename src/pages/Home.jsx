@@ -124,7 +124,7 @@ const ServicesPreview = () => (
       <ScrollReveal>
         <p className="section-label text-center">Amit kínálok</p>
         <h2 className="section-title text-center mb-16">
-          Prémium <span>szolgáltatások</span>
+          Prémium <span>Autó detailing</span>
         </h2>
       </ScrollReveal>
 
