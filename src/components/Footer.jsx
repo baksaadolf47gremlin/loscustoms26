@@ -66,7 +66,7 @@ const Footer = () => {
                 <li key={link.path}>
                   <Link
                     to={link.path}
-                    className="text-sm text-muted hover:text-accent transition-colors duration-200"
+                    className="text-sm text-light/60 hover:text-accent transition-colors duration-200"
                   >
                     {link.label}
                   </Link>
@@ -81,14 +81,14 @@ const Footer = () => {
             <ul className="flex flex-col gap-4">
               <li>
                 <a href="tel:+36709912761" className="flex items-center gap-3 group">
-                  <Phone size={14} className="text-muted group-hover:text-light transition-colors flex-shrink-0" />
-                  <span className="text-muted text-sm group-hover:text-light transition-colors">+36 70 991 2761</span>
+                  <Phone size={14} className="text-light/60 group-hover:text-accent transition-colors flex-shrink-0" />
+                  <span className="text-light/60 text-sm group-hover:text-accent transition-colors">+36 70 991 2761</span>
                 </a>
               </li>
               <li>
                 <a href="mailto:loscustoms01@gmail.com" className="flex items-center gap-3 group">
-                  <Mail size={14} className="text-muted group-hover:text-light transition-colors flex-shrink-0" />
-                  <span className="text-muted text-sm group-hover:text-light transition-colors">loscustoms01@gmail.com</span>
+                  <Mail size={14} className="text-light/60 group-hover:text-accent transition-colors flex-shrink-0" />
+                  <span className="text-light/60 text-sm group-hover:text-accent transition-colors">loscustoms01@gmail.com</span>
                 </a>
               </li>
               <li>
@@ -98,8 +98,8 @@ const Footer = () => {
                   rel="noreferrer"
                   className="flex items-start gap-3 group"
                 >
-                  <MapPin size={14} className="text-muted group-hover:text-light transition-colors mt-0.5 flex-shrink-0" />
-                  <div className="text-muted text-sm group-hover:text-light transition-colors leading-relaxed">
+                  <MapPin size={14} className="text-light/60 group-hover:text-accent transition-colors mt-0.5 flex-shrink-0" />
+                  <div className="text-light/60 text-sm group-hover:text-accent transition-colors leading-relaxed">
                     Budapest, 1194
                     <br />
                     Hoffer Albert utca 41.
