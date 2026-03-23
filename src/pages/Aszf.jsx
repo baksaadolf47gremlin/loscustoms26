@@ -1,4 +1,6 @@
 import { useEffect } from 'react'
+import { Link } from 'react-router-dom'
+import { ChevronLeft } from 'lucide-react'
 import ScrollReveal from '../components/ScrollReveal'
 
 const Aszf = () => {
@@ -7,8 +9,19 @@ const Aszf = () => {
   }, [])
 
   return (
-    <main className="min-h-screen pt-24 pb-16 px-4 bg-primary text-white">
-      <div className="max-w-4xl mx-auto glass-card p-8 md:p-12">
+    <main className="min-h-screen pt-32 pb-16 px-4 bg-primary text-white relative">
+      <div className="max-w-4xl mx-auto">
+        <ScrollReveal>
+          <Link
+            to="/"
+            className="inline-flex items-center gap-2 text-white/60 hover:text-accent transition-colors mb-8 group"
+          >
+            <ChevronLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
+            <span>Vissza a főoldalra</span>
+          </Link>
+        </ScrollReveal>
+        
+      <div className="glass-card p-8 md:p-12">
         <ScrollReveal>
           <h1 className="text-3xl md:text-4xl font-black text-accent mb-8 font-poppins text-center tracking-tight">
             Általános Szerződési Feltételek
@@ -85,6 +98,7 @@ const Aszf = () => {
             </section>
           </div>
         </ScrollReveal>
+      </div>
       </div>
     </main>
   )
