@@ -21,7 +21,7 @@ const Aszf = () => {
           </Link>
         </ScrollReveal>
         
-      <div className="glass-card p-8 md:p-12">
+      <div className="bg-black/40 backdrop-blur-md border border-white/5 rounded-2xl p-8 md:p-12">
         <ScrollReveal>
           <h1 className="text-3xl md:text-4xl font-black text-accent mb-8 font-poppins text-center tracking-tight">
             Általános Szerződési Feltételek
@@ -96,6 +96,16 @@ const Aszf = () => {
                 A Szolgáltató nem vállal felelősséget a járműben hagyott tárgyakért.
               </p>
             </section>
+          </div>
+
+          <div className="mt-12 pt-8 border-t border-white/10 flex justify-center">
+            <Link
+              to="/"
+              className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white/80 hover:text-accent transition-all group"
+            >
+              <ChevronLeft size={20} className="group-hover:-translate-x-1 transition-transform" />
+              <span>Vissza a főoldalra</span>
+            </Link>
           </div>
         </ScrollReveal>
       </div>
