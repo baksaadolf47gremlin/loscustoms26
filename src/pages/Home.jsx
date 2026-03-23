@@ -100,21 +100,21 @@ const serviceCards = [
     title: 'Külső részletezés',
     desc: 'Polír, kerámia bevonat, fényszóró polírozás, rovareltávolítás. Az autód külseje újat varázslunk.',
     link: '/szolgaltatasok',
-    img: '/images/gallery/group_95_1x.webp',
+    img: '/images/kulosreszletezes.webp',
   },
   {
     icon: <Layers size={28} className="text-accent" />,
     title: 'Belső takarítás',
     desc: 'Mélytisztítás, kárpit kezelés, bőrápolás, üveg tisztítás. Csillogó beltér minden alkalommal.',
     link: '/szolgaltatasok',
-    img: '/images/gallery/group_100_1x.webp',
+    img: '/images/belsotakaritas.webp',
   },
   {
     icon: <Shield size={28} className="text-accent" />,
     title: 'Speciális kezelések',
     desc: 'Kerámia bevonatok, prémium polírozás, kárpit kezelés külön csomagokban – maximális védelem.',
     link: '/csomagok',
-    img: '/images/gallery/group_103_1x.webp',
+    img: '/images/specialiskezelesek.webp',
   },
 ]
 
@@ -133,7 +133,7 @@ const ServicesPreview = () => (
           <ScrollReveal key={i} delay={i * 0.12}>
             <div className="glass-card overflow-hidden group h-full flex flex-col">
               {/* Image */}
-              <div className="relative h-52 overflow-hidden">
+              <div className="relative h-64 overflow-hidden">
                 <img
                   src={card.img}
                   alt={card.title}
