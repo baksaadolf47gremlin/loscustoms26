@@ -96,21 +96,21 @@ const StatsBar = () => (
 // ─── Services Preview ─────────────────────────────────────────────────────────
 const serviceCards = [
   {
-    icon: <Sparkles size={28} className="text-accent" />,
+    icon: <img src="/images/kulsoreszletezes_ikon.png" alt="Ikon" className="w-12 h-12 object-contain" />,
     title: 'Külső részletezés',
     desc: 'Polír, kerámia bevonat, fényszóró polírozás, rovareltávolítás. Az autód külseje újat varázslunk.',
     link: '/szolgaltatasok',
     img: '/images/kulosreszletezes.webp',
   },
   {
-    icon: <Layers size={28} className="text-accent" />,
+    icon: <img src="/images/belsotakaritas_ikon.png" alt="Ikon" className="w-12 h-12 object-contain" />,
     title: 'Belső takarítás',
     desc: 'Mélytisztítás, kárpit kezelés, bőrápolás, üveg tisztítás. Csillogó beltér minden alkalommal.',
     link: '/szolgaltatasok',
     img: '/images/belsotakaritas.webp',
   },
   {
-    icon: <Shield size={28} className="text-accent" />,
+    icon: <img src="/images/specialiskezelesek_ikon.png" alt="Ikon" className="w-12 h-12 object-contain" />,
     title: 'Speciális kezelések',
     desc: 'Kerámia bevonatok, prémium polírozás, kárpit kezelés külön csomagokban – maximális védelem.',
     link: '/csomagok',
@@ -145,7 +145,7 @@ const ServicesPreview = () => (
 
               {/* Content */}
               <div className="p-6 flex flex-col flex-1">
-                <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center mb-4">
+                <div className="mb-4">
                   {card.icon}
                 </div>
                 <h3 className="font-heading font-bold text-xl text-light mb-3">{card.title}</h3>
