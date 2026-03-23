@@ -45,7 +45,6 @@ const filters = [
   { key: 'all', label: 'Mind' },
   { key: 'kulso', label: 'Külső' },
   { key: 'belso', label: 'Belső' },
-  { key: 'kezeles', label: 'Kezelések' },
 ]
 
 const Gallery = () => {
