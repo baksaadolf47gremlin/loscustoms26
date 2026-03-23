@@ -87,34 +87,16 @@ const Contact = () => {
           <div className="lg:col-span-2 flex flex-col gap-4">
             {contactInfo.map((info, i) => (
               <ScrollReveal key={i} delay={i * 0.1} direction="left">
-                {info.href ? (
-                  <a
-                    href={info.href}
-                    target={info.href.startsWith('http') ? '_blank' : undefined}
-                    rel="noreferrer"
-                    className="bg-card border border-white/5 rounded-2xl shadow-card p-5 flex items-start gap-4 group transition-colors"
-                  >
-                    <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors">
-                      {info.icon}
-                    </div>
-                    <div>
-                      <p className="text-muted text-xs font-medium tracking-wide mb-1">{info.label}</p>
-                      <p className="text-light text-sm font-semibold">{info.value}</p>
-                      {info.sub && <p className="text-muted text-xs mt-0.5">{info.sub}</p>}
-                    </div>
-                  </a>
-                ) : (
-                  <div className="bg-card border border-white/5 rounded-2xl shadow-card p-5 flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
-                      {info.icon}
-                    </div>
-                    <div>
-                      <p className="text-muted text-xs font-medium tracking-wide mb-1">{info.label}</p>
-                      <p className="text-light text-sm font-semibold">{info.value}</p>
-                      {info.sub && <p className="text-muted text-xs mt-0.5">{info.sub}</p>}
-                    </div>
+                <div className="bg-card border border-white/5 rounded-2xl shadow-card p-5 flex items-start gap-4">
+                  <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
+                    {info.icon}
                   </div>
-                )}
+                  <div>
+                    <p className="text-muted text-xs font-medium tracking-wide mb-1">{info.label}</p>
+                    <p className="text-light text-sm font-semibold">{info.value}</p>
+                    {info.sub && <p className="text-muted text-xs mt-0.5">{info.sub}</p>}
+                  </div>
+                </div>
               </ScrollReveal>
             ))}
 
