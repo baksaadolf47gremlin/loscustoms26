@@ -38,7 +38,7 @@ const allImages = [
   { src: '/images/gallery/group_102_1x.webp', category: 'belso' },
   { src: '/images/gallery/group_103_1x.webp', category: 'kezeles' },
   { src: '/images/gallery/image_125_1x.webp', category: 'kezeles' },
-  { src: '/images/gallery/image_126_1x.webp', category: 'kulso' },
+  { src: '/images/gallery/image_126_1x.webp', category: 'belso' },
 ]
 
 const filters = [
