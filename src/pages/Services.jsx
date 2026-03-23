@@ -7,7 +7,7 @@ const detailingPackages = [
     id: 'detailing-1',
     tag: 'Fényesítő polírozás',
     title: 'Alap Szolgáltatásaim',
-    icon: <Sparkles className="text-accent mb-4" size={32} />,
+    icon: <img src="/icons/szivacs.png" alt="Szivacs Ikon" className="w-12 h-12 object-contain mb-4 opacity-90 drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]" />,
     priceText: 'Kezdő ár',
     priceValue: '59.000 - 69.000 Ft',
     items: [
@@ -26,7 +26,7 @@ const detailingPackages = [
     id: 'detailing-2',
     tag: 'Több lépcsős fényezés korrekciós polírozás',
     title: 'Prémium Detailing Opciók',
-    icon: <Sparkles className="text-accent mb-4" size={32} />,
+    icon: <img src="/icons/szivacspremium.png" alt="Prémium Szivacs Ikon" className="w-12 h-12 object-contain mb-4 opacity-90 drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]" />,
     priceText: 'Kezdő ár',
     priceValue: '99.000 Ft - 169.000 Ft',
     items: [
