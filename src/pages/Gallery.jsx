@@ -39,7 +39,6 @@ const allImages = [
   { src: '/images/gallery/group_103_1x.webp', category: 'kezeles' },
   { src: '/images/gallery/image_125_1x.webp', category: 'kezeles' },
   { src: '/images/gallery/image_126_1x.webp', category: 'kulso' },
-  { src: '/images/gallery/IMG_2127.webp', category: 'kulso' },
   { src: '/images/gallery/IMG_4098.webp', category: 'kulso' },
   { src: '/images/gallery/IMG_4099.webp', category: 'kulso' },
   { src: '/images/gallery/IMG_4103.webp', category: 'kulso' },
