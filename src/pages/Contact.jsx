@@ -92,7 +92,7 @@ const Contact = () => {
                     href={info.href}
                     target={info.href.startsWith('http') ? '_blank' : undefined}
                     rel="noreferrer"
-                    className="glass-card p-5 flex items-start gap-4 group"
+                    className="bg-card border border-white/5 rounded-2xl shadow-card p-5 flex items-start gap-4 group transition-colors"
                   >
                     <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors">
                       {info.icon}
@@ -104,7 +104,7 @@ const Contact = () => {
                     </div>
                   </a>
                 ) : (
-                  <div className="glass-card p-5 flex items-start gap-4">
+                  <div className="bg-card border border-white/5 rounded-2xl shadow-card p-5 flex items-start gap-4">
                     <div className="w-10 h-10 rounded-xl bg-accent/10 flex items-center justify-center flex-shrink-0">
                       {info.icon}
                     </div>
@@ -122,7 +122,7 @@ const Contact = () => {
 
           {/* Contact Form */}
           <ScrollReveal className="lg:col-span-3" direction="right">
-            <div className="glass-card p-8 h-full">
+            <div className="bg-card border border-white/5 rounded-2xl shadow-card p-8 h-full">
               {status === 'success' ? (
                 <div className="flex flex-col items-center justify-center h-full text-center py-12">
                   <CheckCircle size={56} className="text-accent mb-5" />
