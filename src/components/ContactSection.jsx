@@ -214,7 +214,8 @@ const ContactSection = () => {
                 referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
             
-            <div className="absolute inset-0 bg-black/20 pointer-events-none mix-blend-overlay"></div>
+            {/* Overlay: megakadályozza hogy az egér belépjen az iframe-be (dupla kurzor fix) */}
+            <div className="absolute inset-0 bg-black/20 mix-blend-overlay" style={{ cursor: 'none' }}></div>
           </div>
           <p className="mt-6 text-light font-bold text-lg tracking-wider">1194 Budapest Hoffer Albert 41.</p>
         </motion.div>

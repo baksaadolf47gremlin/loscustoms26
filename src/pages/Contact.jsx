@@ -120,7 +120,7 @@ const Contact = () => {
 
             {/* Map embed */}
             <ScrollReveal delay={0.4} direction="left">
-              <div className="glass-card overflow-hidden rounded-2xl h-52">
+              <div className="glass-card overflow-hidden rounded-2xl h-52 relative">
                 <iframe
                   title="Los Customs helyszín"
                   src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2699.3!2d19.1!3d47.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDI0JzAwLjAiTiAxOcKwMDYnMDAuMCJF!5e0!3m2!1shu!2shu!4v1234567890!5m2!1shu!2shu"
@@ -130,6 +130,8 @@ const Contact = () => {
                   allowFullScreen
                   loading="lazy"
                 />
+                {/* Overlay: megakadályozza hogy az egér belépjen az iframe-be (dupla kurzor fix) */}
+                <div className="absolute inset-0" style={{ cursor: 'none' }}></div>
               </div>
             </ScrollReveal>
           </div>
