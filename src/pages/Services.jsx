@@ -81,7 +81,6 @@ const comboPackages = [
     id: 'combo-1',
     tag: '1-2 óra',
     title: 'Belső tisztítás',
-    icon: <img src="/icons/belsotakaritas.png" alt="Belső Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)]" />,
     priceText: 'Kezdő ár',
     priceValue: '18.000 Ft-tól',
     items: [
@@ -96,7 +95,6 @@ const comboPackages = [
     id: 'combo-2',
     tag: '2-3 óra',
     title: 'Komplett mosás',
-    icon: <img src="/icons/belsotakaritas.png" alt="Komplett Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)]" />,
     priceText: 'Kezdő ár',
     priceValue: '35.000 Ft-tól',
     items: [
@@ -116,7 +114,6 @@ const comboPackages = [
     id: 'combo-3',
     tag: '3-4 óra',
     title: 'Prémium Komplett mosás',
-    icon: <img src="/icons/belsotakaritas.png" alt="Prémium Komplett Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)]" />,
     priceText: 'Kezdő ár',
     priceValue: '50.000 Ft-tól',
     items: [
@@ -145,9 +142,11 @@ const CustomPackageCard = ({ pkg, delay = 0 }) => (
       )}
 
       {/* Moved Icon explicitly above tags */}
-      <div className="flex-shrink-0">
-        {pkg.icon}
-      </div>
+      {pkg.icon && (
+        <div className="flex-shrink-0">
+          {pkg.icon}
+        </div>
+      )}
       
       {!pkg.highlight && (
         <span className="text-[10px] font-heading font-bold tracking-[0.2em] text-muted uppercase mb-2 block">{pkg.tag}</span>
