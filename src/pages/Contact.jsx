@@ -118,21 +118,6 @@ const Contact = () => {
               </ScrollReveal>
             ))}
 
-            {/* Map embed */}
-            <ScrollReveal delay={0.4} direction="left">
-              <div className="iframe-map glass-card overflow-hidden rounded-2xl h-52 relative">
-                <iframe
-                  title="Los Customs helyszín"
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2699.3!2d19.1!3d47.4!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDfCsDI0JzAwLjAiTiAxOcKwMDYnMDAuMCJF!5e0!3m2!1shu!2shu!4v1234567890!5m2!1shu!2shu"
-                  width="100%"
-                  height="100%"
-                  style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg)' }}
-                  allowFullScreen
-                  loading="lazy"
-                />
-
-              </div>
-            </ScrollReveal>
           </div>
 
           {/* Contact Form */}
