@@ -3,19 +3,24 @@ import { motion } from 'framer-motion'
 
 const pairs = [
   {
-    title: 'Lámpa polír',
-    before: '/images/before-after/image_33_1x.webp',
+    title: 'Lámpa polírozás',
+    before: '/images/before-after/image_44.webp',
     after: '/images/before-after/image_44_1x.webp',
   },
   {
-    title: 'Alváz tisztítás',
-    before: '/images/before-after/img_2127_1_1x.webp',
-    after: '/images/before-after/img_2140_2_1x.webp',
+    title: 'Belső takarítás',
+    before: '/images/before-after/image_33.webp',
+    after: '/images/before-after/image_33_1x.webp',
   },
   {
     title: 'Felni polírozás',
     before: '/images/before-after/img_9364_1_1x.webp',
     after: '/images/before-after/img_9366_1_1x.webp',
+  },
+  {
+    title: 'Csomagtér takarítás',
+    before: '/images/before-after/img_2140_2_1x.webp',
+    after: '/images/before-after/img_2127_1_1x.webp',
   },
 ]
 
@@ -114,17 +119,17 @@ const SliderCard = ({ pair, index }) => {
 
         {/* Handle line */}
         <div
-          className="absolute top-0 bottom-0 w-px bg-accent shadow-[0_0_8px_rgba(232,184,75,0.8)] pointer-events-none"
-          style={{ left: `${position}%` }}
+          className="absolute top-0 bottom-0 w-[2px] bg-white/50 shadow-[0_0_5px_rgba(255,255,255,0.4)] pointer-events-none"
+          style={{ left: `calc(${position}% - 1px)` }}
         />
 
         {/* Handle knob */}
         <div
-          className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-9 h-9 rounded-full bg-accent border-2 border-white shadow-[0_0_12px_rgba(232,184,75,0.6)] flex items-center justify-center pointer-events-none z-10"
+          className="absolute top-1/2 -translate-y-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-white/10 backdrop-blur-md border border-white/40 shadow-[0_4px_12px_rgba(0,0,0,0.3),inset_0_0_10px_rgba(255,255,255,0.2)] flex items-center justify-center pointer-events-none z-10"
           style={{ left: `${position}%` }}
         >
           {/* Double arrow icon */}
-          <svg viewBox="0 0 20 20" fill="none" className="w-4 h-4" stroke="#0A0A0A" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+          <svg viewBox="0 0 20 20" fill="none" className="w-5 h-5" stroke="#FFFFFF" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
             <path d="M7 7L3 10l4 3M13 7l4 3-4 3" />
           </svg>
         </div>
@@ -164,8 +169,8 @@ const BeforeAfter = () => (
         </motion.p>
       </div>
 
-      {/* 3-card grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 max-w-5xl mx-auto">
+      {/* 4-card grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-5xl mx-auto">
         {pairs.map((pair, i) => (
           <SliderCard key={i} pair={pair} index={i} />
         ))}
