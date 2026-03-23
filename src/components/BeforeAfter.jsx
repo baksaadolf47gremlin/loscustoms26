@@ -6,7 +6,7 @@ const pairs = [
     title: 'Lámpa polírozás',
     before: '/images/before-after/image_44_before_4x.webp',
     after: '/images/before-after/image_44_4x.webp',
-    styleBefore: { transform: 'scale(1.95) translate(-10%, 7%)' }
+    styleBefore: { transform: 'scale(1.25) translate(-2%, 3%)' }
   },
   {
     title: 'Belső takarítás',
