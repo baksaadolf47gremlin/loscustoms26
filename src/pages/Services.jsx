@@ -76,6 +76,64 @@ const detailingPackages = [
   },
 ]
 
+const comboPackages = [
+  {
+    id: 'combo-1',
+    tag: '1-2 óra',
+    title: 'Belső tisztítás',
+    icon: <img src="/icons/belsotakaritas.png" alt="Belső Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)]" />,
+    priceText: 'Kezdő ár',
+    priceValue: '18.000 Ft-tól',
+    items: [
+      'Alap belső takarítás',
+      'Porszívózás',
+      'Műanyagok vegyszeres tisztítása',
+      'Ablakok belső tisztítása',
+    ],
+    color: 'border-white/10',
+  },
+  {
+    id: 'combo-2',
+    tag: '2-3 óra',
+    title: 'Komplett mosás',
+    icon: <img src="/icons/belsotakaritas.png" alt="Komplett Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)]" />,
+    priceText: 'Kezdő ár',
+    priceValue: '35.000 Ft-tól',
+    items: [
+      'Alapos külső mosás',
+      'Bogár oldás',
+      'Felni tisztítás',
+      'Alap belső takarítás',
+      'Porszívózás',
+      'Műanyagok vegyszeres tisztítása és ápolása',
+      'Gumik ápolása és külső műanyagok',
+      'Ablakok külső és belső tisztítása',
+    ],
+    color: 'border-accent/40',
+    highlight: true,
+  },
+  {
+    id: 'combo-3',
+    tag: '3-4 óra',
+    title: 'Prémium Komplett mosás',
+    icon: <img src="/icons/belsotakaritas.png" alt="Prémium Komplett Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)]" />,
+    priceText: 'Kezdő ár',
+    priceValue: '50.000 Ft-tól',
+    items: [
+      'Alapos külső mosás',
+      'Bogár oldás',
+      'Felni tisztítás',
+      'Külső műanyagok és gumi ápolása',
+      'Alap belső takarítás',
+      'Porszívózás',
+      'Műanyagok vegyszeres tisztítása és ápolása',
+      'Ablakok külső és belső tisztítása',
+      'Kárpittisztítás',
+    ],
+    color: 'border-accent-dark/30',
+  },
+]
+
 const CustomPackageCard = ({ pkg, delay = 0 }) => (
   <ScrollReveal delay={delay}>
     <div className={`relative flex flex-col h-full rounded-2xl border ${pkg.color} bg-card shadow-card p-6 md:p-8
@@ -167,6 +225,21 @@ const Services = () => (
     <section className="py-20 px-4 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
         {detailingPackages.map((pkg, i) => (
+          <CustomPackageCard key={i} pkg={pkg} delay={i * 0.1} />
+        ))}
+      </div>
+    </section>
+
+    {/* Második szekció (belső és kombinált csomagok) */}
+    <section className="py-20 px-4 max-w-7xl mx-auto border-t border-white/5">
+      <ScrollReveal>
+        <span className="gold-line mx-auto mb-6" />
+        <h2 className="text-3xl md:text-4xl font-black text-center text-light mb-16 font-poppins">
+          Komplex <span className="text-accent">tisztító csomagok</span>
+        </h2>
+      </ScrollReveal>
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-stretch">
+        {comboPackages.map((pkg, i) => (
           <CustomPackageCard key={i} pkg={pkg} delay={i * 0.1} />
         ))}
       </div>
