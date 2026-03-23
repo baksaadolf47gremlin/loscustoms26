@@ -39,6 +39,16 @@ const allImages = [
   { src: '/images/gallery/group_103_1x.webp', category: 'kezeles' },
   { src: '/images/gallery/image_125_1x.webp', category: 'kezeles' },
   { src: '/images/gallery/image_126_1x.webp', category: 'kulso' },
+  { src: '/images/gallery/IMG_2127.webp', category: 'kulso' },
+  { src: '/images/gallery/IMG_4098.webp', category: 'kulso' },
+  { src: '/images/gallery/IMG_4099.webp', category: 'kulso' },
+  { src: '/images/gallery/IMG_4103.webp', category: 'kulso' },
+  { src: '/images/gallery/IMG_4105.webp', category: 'kulso' },
+  { src: '/images/gallery/IMG_935serdztfuzgiuij7.webp', category: 'kulso' },
+  { src: '/images/gallery/IMG_9364.webp', category: 'kulso' },
+  { src: '/images/gallery/IMG_9366.webp', category: 'kulso' },
+  { src: '/images/gallery/e444554466.webp', category: 'kulso' },
+  { src: '/images/gallery/nzjthejrkztjthrgef.webp', category: 'kulso' },
 ]
 
 const filters = [
