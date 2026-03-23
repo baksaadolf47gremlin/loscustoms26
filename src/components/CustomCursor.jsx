@@ -5,6 +5,7 @@ const CustomCursor = () => {
   const [isHovering, setIsHovering] = useState(false)
   const [isClicked, setIsClicked] = useState(false)
   const [isVisible, setIsVisible] = useState(false)
+  const [isOverIframe, setIsOverIframe] = useState(false)
   const [clickPos, setClickPos] = useState(null)
 
   // Motion values for smooth fast tracking (0 ms lag)
@@ -30,6 +31,11 @@ const CustomCursor = () => {
         if (e.target.closest('a, button, input, textarea, .cursor-pointer, .gallery-img')) {
           setIsHovering(true)
         }
+        // Ha iframe-map terület fölé lép az egér, elrejtjük az egyedi kurzort
+        if (e.target.closest('.iframe-map')) {
+          setIsOverIframe(true)
+          document.documentElement.classList.remove('hide-native-cursor')
+        }
       }
     }
 
@@ -38,8 +44,15 @@ const CustomCursor = () => {
         if (!e.relatedTarget.closest('a, button, input, textarea, .cursor-pointer, .gallery-img')) {
           setIsHovering(false)
         }
+        // Ha elhagyjuk az iframe-map területet, visszahozzuk az egyedi kurzort
+        if (!e.relatedTarget.closest('.iframe-map')) {
+          setIsOverIframe(false)
+          document.documentElement.classList.add('hide-native-cursor')
+        }
       } else {
         setIsHovering(false)
+        setIsOverIframe(false)
+        document.documentElement.classList.add('hide-native-cursor')
       }
     }
 
@@ -94,7 +107,8 @@ const CustomCursor = () => {
     }
   }, [mouseX, mouseY])
 
-  if (!isVisible) return null
+  // Az egyedi kurzor nem látszik ha nincs fókuszban VAGY ha iframe felett vagyunk
+  if (!isVisible || isOverIframe) return null
 
   return (
     <>

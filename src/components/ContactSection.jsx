@@ -204,7 +204,7 @@ const ContactSection = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
             className="mt-24 w-full flex flex-col items-center"
         >
-          <div className="w-full max-w-2xl aspect-square sm:aspect-video relative overflow-hidden border-2 border-white/20 rounded-xl shadow-[0_0_30px_rgba(0,0,0,0.8)] filter grayscale-[50%] contrast-[1.2]">
+          <div className="iframe-map w-full max-w-2xl aspect-square sm:aspect-video relative overflow-hidden border-2 border-white/20 rounded-xl shadow-[0_0_30px_rgba(0,0,0,0.8)] filter grayscale-[50%] contrast-[1.2]">
             {/* Real map could be an iframe or dynamic map, using a placeholder for now to mimic GTA map aesthetics */}
             <iframe 
                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2698.924773831805!2d19.141873115624794!3d47.43329997917307!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741c2c31c77caff%3A0x67ee1c062820cd29!2sBudapest%2C%20Hoffer%20Albert%20u.%2041%2C%201194!5e0!3m2!1sen!2shu!4v1689239845345!5m2!1sen!2shu" 
@@ -214,8 +214,7 @@ const ContactSection = () => {
                 referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
             
-            {/* Overlay: megakadályozza hogy az egér belépjen az iframe-be (dupla kurzor fix) */}
-            <div className="absolute inset-0 bg-black/20 mix-blend-overlay" style={{ cursor: 'none' }}></div>
+            <div className="absolute inset-0 bg-black/20 pointer-events-none mix-blend-overlay"></div>
           </div>
           <p className="mt-6 text-light font-bold text-lg tracking-wider">1194 Budapest Hoffer Albert 41.</p>
         </motion.div>
