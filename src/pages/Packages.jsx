@@ -1,10 +1,9 @@
 import { Link } from 'react-router-dom'
-import { Check, Zap, Droplets, Sofa, Phone } from 'lucide-react'
+import { Check, Phone } from 'lucide-react'
 import ScrollReveal from '../components/ScrollReveal'
 
 const treatments = [
   {
-    icon: <Zap size={32} className="text-accent" />,
     name: 'Polír csomag',
     price: '8.000',
     badge: null,
@@ -16,7 +15,6 @@ const treatments = [
     ]
   },
   {
-    icon: <Droplets size={32} className="text-accent" />,
     name: 'Kerámia bevonatok',
     price: '8.000',
     badge: 'Legjobb védelem',
@@ -28,7 +26,6 @@ const treatments = [
     ]
   },
   {
-    icon: <Sofa size={32} className="text-accent" />,
     name: 'Kárpit kezelés',
     price: '8.000',
     badge: null,
@@ -84,10 +81,7 @@ const Packages = () => (
               </div>
 
               {/* Content */}
-              <div className="p-7 flex flex-col flex-1">
-                <div className="w-14 h-14 rounded-2xl bg-accent/10 flex items-center justify-center mb-5">
-                  {t.icon}
-                </div>
+              <div className="p-7 flex flex-col flex-1 pt-8">
                 <h3 className="font-heading font-extrabold text-2xl text-light mb-1">{t.name}</h3>
                 <div className="flex items-end gap-1 mb-5">
                   <span className="font-heading font-black text-3xl text-accent">{t.price}</span>
