@@ -7,7 +7,7 @@ const detailingPackages = [
     id: 'detailing-1',
     tag: 'Fényesítő polírozás',
     title: 'Alap Szolgáltatásaim',
-    icon: <img src="/icons/szivacs.png" alt="Szivacs Ikon" className="w-12 h-12 object-contain mb-4 opacity-90 drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]" />,
+    icon: <img src="/icons/szivacs.png" alt="Szivacs Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)]" />,
     priceText: 'Kezdő ár',
     priceValue: '59.000 - 69.000 Ft',
     items: [
@@ -26,7 +26,7 @@ const detailingPackages = [
     id: 'detailing-2',
     tag: 'Több lépcsős fényezés korrekciós polírozás',
     title: 'Prémium Detailing Opciók',
-    icon: <img src="/icons/szivacspremium.png" alt="Prémium Szivacs Ikon" className="w-12 h-12 object-contain mb-4 opacity-90 drop-shadow-[0_0_8px_rgba(255,255,255,0.2)]" />,
+    icon: <img src="/icons/szivacspremium.png" alt="Prémium Szivacs Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)]" />,
     priceText: 'Kezdő ár',
     priceValue: '99.000 Ft - 169.000 Ft',
     items: [
@@ -46,7 +46,7 @@ const detailingPackages = [
     id: 'washing',
     tag: '(1-2 óra)',
     title: 'Külső mosás opciók',
-    icon: <Droplets className="text-accent mb-4" size={32} />,
+    icon: <Droplets className="text-accent/60 mb-5" size={40} />,
     priceText: 'Kezdő ár',
     priceValue: '13.000 Ft-tól',
     items: [
@@ -64,7 +64,7 @@ const detailingPackages = [
     id: 'protection',
     tag: '1-5 éves kerámia bevonat',
     title: 'Autóvédelem',
-    icon: <Shield className="text-accent mb-4" size={32} />,
+    icon: <Shield className="text-accent/60 mb-5" size={40} />,
     prices: [
       { label: '1 éves', price: '49.000 Ft' },
       { label: '3 éves', price: '99.000 Ft' },
@@ -85,20 +85,20 @@ const CustomPackageCard = ({ pkg, delay = 0 }) => (
           Prémium
         </span>
       )}
+
+      {/* Moved Icon explicitly above tags */}
+      <div className="flex-shrink-0">
+        {pkg.icon}
+      </div>
       
       {!pkg.highlight && (
         <span className="text-[10px] font-heading font-bold tracking-[0.2em] text-muted uppercase mb-2 block">{pkg.tag}</span>
       )}
       {pkg.highlight && (
-         <span className="text-[10px] font-heading font-bold tracking-[0.2em] text-accent uppercase mb-2 block mt-2">{pkg.tag}</span>
+         <span className="text-[10px] font-heading font-bold tracking-[0.2em] text-accent uppercase mb-2 block">{pkg.tag}</span>
       )}
 
-      <div className="flex justify-between items-start mb-4">
-        <h3 className="font-heading font-extrabold text-2xl text-light">{pkg.title}</h3>
-        <div className="hidden sm:block flex-shrink-0 ml-4 opacity-50">
-          {pkg.icon}
-        </div>
-      </div>
+      <h3 className="font-heading font-extrabold text-2xl text-light mb-4">{pkg.title}</h3>
 
       <div className="flex flex-col gap-1 mb-6 mt-auto border-b border-white/5 pb-6">
         {pkg.prices ? (
