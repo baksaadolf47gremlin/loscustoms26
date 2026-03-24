@@ -205,12 +205,12 @@ const CustomPackageCard = ({ pkg, delay = 0 }) => (
       <div className="mt-auto pt-4">
         <Link
           to="/kapcsolat"
-          className={`block w-full text-center py-4 rounded-xl font-heading font-bold text-sm tracking-wider transition-all duration-300
+          className={`block mx-auto text-center rounded-xl font-heading font-bold tracking-wider transition-all duration-300
             ${pkg.highlight
-              ? 'bg-accent text-black hover:bg-accent-light hover:shadow-gold'
-              : 'bg-white/5 text-light hover:bg-accent hover:text-black border border-white/10 hover:border-transparent'}`}
+              ? 'w-full py-4 text-sm bg-accent text-black hover:bg-accent-light hover:shadow-gold'
+              : 'w-[85%] py-3.5 text-xs bg-white/5 text-light hover:bg-accent hover:text-black border border-white/10 hover:border-transparent'}`}
         >
-          Időpont foglalás
+          {pkg.highlight ? 'Időpont foglalás' : 'Érdeklődöm'}
         </Link>
       </div>
     </div>
