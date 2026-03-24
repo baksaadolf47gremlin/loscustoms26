@@ -7,7 +7,8 @@ const detailingPackages = [
     id: 'detailing-1',
     tag: 'Fényesítő polírozás',
     title: 'Alap Szolgáltatásaim',
-    icon: <img src="/icons/szivacs.png" alt="Szivacs Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)]" />,
+    img: '/images/alapszolgaltatasaimkartya.webp',
+    icon: <img src="/icons/szivacs.png" alt="Szivacs Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] relative z-10" />,
     priceText: 'Kezdő ár',
     priceValue: '59.000 - 69.000 Ft',
     items: [
@@ -26,7 +27,8 @@ const detailingPackages = [
     id: 'detailing-2',
     tag: 'Több lépcsős fényezés korrekciós polírozás',
     title: 'Prémium Detailing Opciók',
-    icon: <img src="/icons/szivacspremium.png" alt="Prémium Szivacs Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)]" />,
+    img: '/images/premiumdetailingopciokkartya.webp',
+    icon: <img src="/icons/szivacspremium.png" alt="Prémium Szivacs Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] relative z-10" />,
     priceText: 'Kezdő ár',
     priceValue: '99.000 Ft - 169.000 Ft',
     items: [
@@ -136,9 +138,20 @@ const CustomPackageCard = ({ pkg, delay = 0 }) => (
     <div className={`relative flex flex-col h-full rounded-2xl border ${pkg.color} bg-card shadow-card p-6 md:p-8
       transition-all duration-300 hover:shadow-gold ${pkg.highlight ? 'ring-1 ring-accent/30' : ''}`}>
       {pkg.highlight && (
-        <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-black text-[10px] font-heading font-bold px-4 py-1 rounded-full tracking-widest uppercase">
+        <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-black text-[10px] font-heading font-bold px-4 py-1 rounded-full tracking-widest uppercase z-[20] shadow-[0_0_15px_rgba(0,0,0,0.8)]">
           Népszerű
         </span>
+      )}
+
+      {pkg.img && (
+        <div className="relative -mx-6 md:-mx-8 -mt-6 md:-mt-8 mb-6 h-52 overflow-hidden rounded-t-[14px]">
+          <img
+            src={pkg.img}
+            alt={pkg.title}
+            className="w-full h-full object-cover object-center transition-transform duration-700 group-hover:scale-[1.03]"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
+        </div>
       )}
 
       {/* Moved Icon explicitly above tags */}
