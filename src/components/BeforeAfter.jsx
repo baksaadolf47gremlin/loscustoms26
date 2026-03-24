@@ -3,16 +3,6 @@ import { motion } from 'framer-motion'
 
 const pairs = [
   {
-    title: 'Lámpa polírozás',
-    before: '/images/before-after/lampa_before.webp',
-    after: '/images/before-after/lampa_after.webp',
-  },
-  {
-    title: 'Belső takarítás',
-    before: '/images/before-after/image_33_before_4x.webp',
-    after: '/images/before-after/image_33_4x.webp',
-  },
-  {
     title: 'Felni polírozás',
     before: '/images/before-after/img_9364_1_4x.webp',
     after: '/images/before-after/img_9366_1_4x.webp',
@@ -21,6 +11,16 @@ const pairs = [
     title: 'Csomagtér takarítás',
     before: '/images/before-after/img_2127_1_4x.webp',
     after: '/images/before-after/img_2140_2_4x.webp',
+  },
+  {
+    title: 'Lámpa polírozás',
+    before: '/images/before-after/lampa_before.webp',
+    after: '/images/before-after/lampa_after.webp',
+  },
+  {
+    title: 'Belső takarítás',
+    before: '/images/before-after/image_33_before_4x.webp',
+    after: '/images/before-after/image_33_4x.webp',
   },
 ]
 
