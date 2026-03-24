@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { motion } from 'framer-motion'
 import { Phone, Mail, MapPin, Clock, CheckCircle } from 'lucide-react'
 
 const ContactSection = () => {
@@ -64,13 +63,7 @@ const ContactSection = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-start">
           
           {/* Left Side: Info */}
-          <motion.div 
-            initial={{ opacity: 0, x: -30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6 }}
-            className="flex flex-col gap-8 lg:pr-12"
-          >
+          <div className="flex flex-col gap-8 lg:pr-12">
              <div>
                <h2 className="font-heading font-black text-4xl sm:text-5xl lg:text-6xl text-white leading-tight mb-2 uppercase tracking-wide">
                  Foglalj <br/>
@@ -126,16 +119,10 @@ const ContactSection = () => {
                   </div>
                 </div>
              </div>
-          </motion.div>
+          </div>
 
           {/* Right Side: Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 30 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-black/80 p-6 sm:p-8 border border-white/10 rounded-lg shadow-2xl"
-          >
+          <div className="bg-black/80 p-6 sm:p-8 border border-white/10 rounded-lg shadow-2xl">
              <form onSubmit={handleSubmit} className="flex flex-col gap-6">
                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                    <div className="flex flex-col gap-2">
@@ -185,25 +172,16 @@ const ContactSection = () => {
                 </button>
 
                 {isSubmitted && (
-                  <motion.p 
-                    initial={{ opacity: 0 }} animate={{ opacity: 1 }}
-                    className="text-green-500 text-sm text-center font-medium"
-                  >
+                  <p className="text-green-500 text-sm text-center font-medium">
                     Üzenet sikeresen elküldve! Hamarosan keresünk.
-                  </motion.p>
+                  </p>
                 )}
              </form>
-          </motion.div>
+          </div>
         </div>
 
         {/* GTA Map Section */}
-        <motion.div 
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.6, delay: 0.4 }}
-            className="mt-24 w-full flex flex-col items-center"
-        >
+        <div className="mt-24 w-full flex flex-col items-center">
           <div className="iframe-map w-full max-w-2xl aspect-square sm:aspect-video relative overflow-hidden border-2 border-white/20 rounded-xl shadow-[0_0_30px_rgba(0,0,0,0.8)] filter grayscale-[50%] contrast-[1.2]">
             {/* Real map could be an iframe or dynamic map, using a placeholder for now to mimic GTA map aesthetics */}
             <iframe 
@@ -217,7 +195,7 @@ const ContactSection = () => {
             <div className="absolute inset-0 bg-black/20 pointer-events-none mix-blend-overlay"></div>
           </div>
           <p className="mt-6 text-light font-bold text-lg tracking-wider">1194 Budapest Hoffer Albert 41.</p>
-        </motion.div>
+        </div>
 
       </div>
     </section>
