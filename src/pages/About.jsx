@@ -31,9 +31,9 @@ const About = () => {
           {/* Szöveges tartalom (bento kártya) - 7 oszlop */}
           <div className="lg:col-span-7">
             <ScrollReveal>
-              <div className="glass-card p-8 md:p-12 relative overflow-hidden group">
+              <div className="bg-card border border-white/5 shadow-card rounded-2xl p-8 md:p-12 relative overflow-hidden">
                 {/* Díszítő elem a kártya sarkában */}
-                <div className="absolute -top-10 -right-10 w-40 h-40 bg-accent/10 rounded-full blur-3xl pointer-events-none transition-all duration-700 group-hover:bg-accent/20"></div>
+                <div className="absolute -top-10 -right-10 w-40 h-40 bg-accent/10 rounded-full blur-3xl pointer-events-none"></div>
 
                 <h2 className="font-heading font-extrabold text-3xl md:text-4xl text-light mb-8 leading-tight">
                   Több, mint egy <br />
@@ -77,7 +77,7 @@ const About = () => {
             <ScrollReveal delay={0.2} className="w-full h-full relative">
               
               {/* Alap (hátsó) kép - Polírozós (Bal felül) */}
-              <div className="absolute top-0 left-2 w-[70%] md:w-[65%] aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 shadow-lg transform rotate-3 hover:rotate-0 transition-all duration-500 z-10 hover:z-30">
+              <div className="absolute top-0 left-2 w-[70%] md:w-[65%] aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 shadow-lg transform rotate-3 hover:rotate-0 transition-all duration-500 z-10">
                 <img 
                   src="/images/bemutatkozas_kep_1.webp" 
                   alt="Autó polírozás munka közben" 
