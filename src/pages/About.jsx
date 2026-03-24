@@ -62,7 +62,7 @@ const About = () => {
 
                 <div className="mt-10 pt-8 border-t border-white/10">
                   <p className="font-heading text-xl font-bold text-light tracking-wide">
-                    Baksa István
+                    Zagyi István
                   </p>
                   <p className="text-accent text-xs font-semibold tracking-widest uppercase mt-1">
                     Alapító / Los Customs
@@ -73,21 +73,20 @@ const About = () => {
           </div>
 
           {/* Képek (kollázs / overlap minta) - 5 oszlop */}
-          <div className="lg:col-span-5 relative h-[500px] md:h-[600px] flex items-center justify-center mt-12 lg:mt-0">
+          <div className="lg:col-span-5 relative h-[500px] md:h-[600px] flex items-center justify-center mt-16 lg:mt-0">
             <ScrollReveal delay={0.2} className="w-full h-full relative">
               
-              {/* Alap (hátsó) kép - Polírozós */}
-              <div className="absolute top-0 right-0 w-[75%] md:w-[80%] aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 shadow-lg transform rotate-2 hover:rotate-0 transition-all duration-500 z-10 hover:z-30">
+              {/* Alap (hátsó) kép - Polírozós (Bal felül) */}
+              <div className="absolute top-0 left-2 w-[70%] md:w-[65%] aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 shadow-lg transform rotate-3 hover:rotate-0 transition-all duration-500 z-10 hover:z-30">
                 <img 
                   src="/images/bemutatkozas_kep_1.webp" 
                   alt="Autó polírozás munka közben" 
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent pointer-events-none"></div>
               </div>
 
-              {/* Elülső kép - Fotózkodós */}
-              <div className="absolute bottom-0 left-0 w-[65%] md:w-[70%] aspect-[4/5] rounded-2xl overflow-hidden border-2 border-accent shadow-[0_0_30px_rgba(232,184,75,0.15)] transform -rotate-3 hover:rotate-0 transition-all duration-500 z-20 hover:z-30">
+              {/* Elülső kép - Fotózkodós (Jobb alul) */}
+              <div className="absolute bottom-4 right-2 w-[70%] md:w-[65%] aspect-[3/4] rounded-2xl overflow-hidden border-2 border-accent shadow-[0_0_30px_rgba(232,184,75,0.15)] transform -rotate-3 hover:rotate-0 transition-all duration-500 z-20 hover:z-30">
                 <img 
                   src="/images/bemutatkozas_kep_2.webp" 
                   alt="Los Customs alapítója" 
