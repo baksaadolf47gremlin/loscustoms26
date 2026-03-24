@@ -27,7 +27,7 @@ const detailingPackages = [
     id: 'detailing-2',
     tag: 'Több lépcsős fényezés korrekciós polírozás',
     title: 'Prémium Detailing Opciók',
-    img: '/images/premiumdetailingopciokkartya-v2.webp',
+    img: '/images/premiumdetailingopciokkartya-v4.webp',
     imgPosition: 'object-bottom',
     icon: <img src="/icons/szivacspremium.png" alt="Prémium Szivacs Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] relative z-10" />,
     priceText: 'Kezdő ár',
