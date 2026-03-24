@@ -109,7 +109,7 @@ const About = () => {
         <ScrollReveal>
           <div className="relative z-10 max-w-2xl mx-auto">
             <p className="text-accent font-heading text-xs font-bold tracking-[0.3em] uppercase mb-4">Házhoz megyünk</p>
-            <h3 className="text-2xl md:text-3xl font-bold text-light mb-8">Ne fáradj el hozzánk, levesszük a terhet a válladról.</h3>
+            <h3 className="text-2xl md:text-3xl font-bold text-light mb-8">Eljössz hozzánk, vagy mi menjünk hozzád?</h3>
             <div className="flex flex-wrap gap-4 justify-center">
               <Link to="/kapcsolat" className="btn-gold shadow-gold">Időpont foglalás</Link>
               <a href="tel:+36307582472" className="btn-outline flex items-center gap-2 bg-black/40"><Phone size={16} className="text-accent" />+36 30 758 2472</a>
