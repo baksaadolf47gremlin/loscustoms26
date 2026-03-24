@@ -28,6 +28,7 @@ const detailingPackages = [
     tag: 'Több lépcsős fényezés korrekciós polírozás',
     title: 'Prémium Detailing Opciók',
     img: '/images/premiumdetailingopciokkartya-v2.webp',
+    imgPosition: 'object-bottom',
     icon: <img src="/icons/szivacspremium.png" alt="Prémium Szivacs Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] relative z-10" />,
     priceText: 'Kezdő ár',
     priceValue: '99.000 Ft - 169.000 Ft',
@@ -148,7 +149,7 @@ const CustomPackageCard = ({ pkg, delay = 0 }) => (
           <img
             src={pkg.img}
             alt={pkg.title}
-            className="w-full h-full object-cover object-bottom transition-transform duration-700 group-hover:scale-[1.03]"
+            className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03] ${pkg.imgPosition || 'object-center'}`}
           />
           <div className="absolute inset-0 bg-gradient-to-t from-card via-card/20 to-transparent" />
         </div>
