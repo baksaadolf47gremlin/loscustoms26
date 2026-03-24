@@ -14,7 +14,7 @@ const ContactSection = () => {
     // Itt injektáljuk a frissített éles kulcsodat:
     formData.append("access_key", "d5e48e41-a88b-45d3-8d44-3ea3ff3890d0")
     formData.append("subject", "Új üzenet a Los Customs weboldalról!")
-    formData.append("from_name", "Los Customs Weboldal")
+    formData.append("from_name", "Los Customs Üzenet")
 
     try {
       const object = Object.fromEntries(formData)

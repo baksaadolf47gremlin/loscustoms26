@@ -47,7 +47,7 @@ const Contact = () => {
         body: JSON.stringify({
           access_key: 'd5e48e41-a88b-45d3-8d44-3ea3ff3890d0',
           subject: `Los Customs – Üzenet: ${form.name}`,
-          from_name: form.name,
+          from_name: 'Los Customs Üzenet',
           email: form.email,
           phone: form.phone,
           message: form.message,
