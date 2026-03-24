@@ -136,8 +136,7 @@ const Navbar = () => {
               transition={{ type: 'spring', damping: 25, stiffness: 200 }}
               className="fixed top-0 right-0 bottom-0 z-50 w-72 bg-black border-l border-white/5 flex flex-col md:hidden"
             >
-              <div className="flex items-center justify-between px-6 h-20 border-b border-white/5">
-                <img src="/images/work/logo.png" alt="Los Customs Logo" className="h-[60px] w-auto" />
+              <div className="flex items-center justify-end px-6 h-20 border-b border-white/5">
                 <button onClick={() => setIsOpen(false)} className="text-light/70 hover:text-accent p-1">
                   <X size={20} />
                 </button>
