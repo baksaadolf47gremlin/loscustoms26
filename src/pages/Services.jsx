@@ -137,7 +137,7 @@ const CustomPackageCard = ({ pkg, delay = 0 }) => (
       transition-all duration-300 hover:shadow-gold ${pkg.highlight ? 'ring-1 ring-accent/30' : ''}`}>
       {pkg.highlight && (
         <span className="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-black text-[10px] font-heading font-bold px-4 py-1 rounded-full tracking-widest uppercase">
-          Prémium
+          Népszerű
         </span>
       )}
 
