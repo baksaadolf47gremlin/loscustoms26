@@ -153,7 +153,7 @@ const CustomPackageCard = ({ pkg, delay = 0 }) => (
             alt={pkg.title}
             className={`w-full h-full object-cover transition-transform duration-700 group-hover:scale-[1.03] ${pkg.imgPosition || 'object-center'}`}
           />
-          <div className="absolute inset-0 bg-gradient-to-t from-card from-20% to-card/0" />
+          <div className="absolute inset-0 pointer-events-none" style={{ background: 'linear-gradient(to top, #141414 0%, #141414 15%, rgba(20,20,20,0) 100%)' }} />
         </div>
       )}
 
