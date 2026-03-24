@@ -49,7 +49,8 @@ const detailingPackages = [
     id: 'washing',
     tag: '(1-2 óra)',
     title: 'Külső mosás opciók',
-    icon: <img src="/icons/vizcsepp.png" alt="Vízcsepp Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)]" />,
+    img: '/images/kulsomosasopciok-v2.webp',
+    icon: <img src="/icons/vizcsepp.png" alt="Vízcsepp Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] relative z-10" />,
     priceText: 'Kezdő ár',
     priceValue: '13.000 Ft-tól',
     items: [
@@ -67,7 +68,8 @@ const detailingPackages = [
     id: 'protection',
     tag: '1-5 éves kerámia bevonat',
     title: 'Autóvédelem',
-    icon: <img src="/icons/pajzs.png" alt="Pajzs Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)]" />,
+    img: '/images/autovedelem-v2.webp',
+    icon: <img src="/icons/pajzs.png" alt="Pajzs Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] relative z-10" />,
     prices: [
       { label: '1 éves', price: '49.000 Ft' },
       { label: '3 éves', price: '99.000 Ft' },
