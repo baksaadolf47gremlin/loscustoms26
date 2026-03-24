@@ -44,7 +44,6 @@ const allImages = [
   { src: '/images/gallery/IMG_4103.webp', category: 'kulso' },
   { src: '/images/gallery/IMG_4105.webp', category: 'kulso' },
   { src: '/images/gallery/IMG_935serdztfuzgiuij7.webp', category: 'kulso' },
-  { src: '/images/gallery/IMG_9364.webp', category: 'kulso' },
   { src: '/images/gallery/IMG_9366.webp', category: 'kulso' },
   { src: '/images/gallery/e444554466.webp', category: 'belso' },
   { src: '/images/gallery/nzjthejrkztjthrgef.webp', category: 'belso' },
