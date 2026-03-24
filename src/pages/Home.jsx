@@ -14,11 +14,11 @@ const Hero = () => {
     <section className="relative w-full bg-black pt-10 sm:pt-12 lg:pt-16 pb-8 px-2 sm:px-6 lg:px-12 xl:px-24 flex flex-col items-center justify-start min-h-[90vh]">
       {/* Végleges Webkit Safari/Chrome trükk, ami letiltja a border-radius alapú GPU szétesést videókról! */}
       <div 
-        className="relative w-[96%] max-w-[1440px] aspect-video mx-auto overflow-hidden rounded-xl sm:rounded-2xl shadow-[0_0_80px_rgba(0,0,0,0.8)] bg-black flex flex-col items-start justify-start transform-gpu"
+        className="relative w-[96%] max-w-[1440px] aspect-[9/16] md:aspect-video mx-auto overflow-hidden rounded-xl sm:rounded-2xl shadow-[0_0_80px_rgba(0,0,0,0.8)] bg-black flex flex-col items-start justify-start transform-gpu"
         style={{ WebkitMaskImage: '-webkit-radial-gradient(white, black)', WebkitBackfaceVisibility: 'hidden', transform: 'translateZ(0)' }}
       >
         
-        {/* A videó natívan, filterek nélkül futtatva a MAXIMÁLIS teljesítményért */}
+        {/* Asztali fekvő videó (md mérettől felfelé látható, 100% változatlan) */}
         <video
           ref={videoRef}
           autoPlay
@@ -26,11 +26,23 @@ const Hero = () => {
           loop
           playsInline
           preload="auto"
-          className="absolute inset-0 w-full h-full object-cover z-0"
+          className="hidden md:block absolute inset-0 w-full h-full object-cover z-0"
         >
           {/* Multiple sources for responsive WebM and optimized MP4 streaming */}
           <source src="/videos/hero.webm" type="video/webm" />
           <source src="/videos/hero.mp4" type="video/mp4" />
+        </video>
+
+        {/* Telefonos álló videó (csak md méret alatt látható) */}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          className="block md:hidden absolute inset-0 w-full h-full object-cover z-0"
+        >
+          <source src="/videos/hellyeah.mp4" type="video/mp4" />
         </video>
         
         {/* Film Grain Noise Override - Mix-blend mód eltávolítva a GPU megkímélése és a villódzás megszüntetése végett */}
