@@ -45,7 +45,7 @@ const Contact = () => {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          access_key: 'YOUR_WEB3FORMS_KEY', // replace with actual key
+          access_key: 'd5e48e41-a88b-45d3-8d44-3ea3ff3890d0',
           subject: `Los Customs – Üzenet: ${form.name}`,
           from_name: form.name,
           email: form.email,
@@ -119,7 +119,7 @@ const Contact = () => {
                 </div>
               ) : (
                 <form onSubmit={handleSubmit} className="flex flex-col gap-5">
-                  <h2 className="font-heading font-bold text-xl text-light mb-2">Küldi el üzeneted</h2>
+                  <h2 className="font-heading font-bold text-xl text-light mb-2">Küldd el üzeneted</h2>
 
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div className="flex flex-col gap-2">
