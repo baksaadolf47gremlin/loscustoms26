@@ -13,6 +13,7 @@ const Packages = lazy(() => import('./pages/Packages'))
 const Gallery = lazy(() => import('./pages/Gallery'))
 const Contact = lazy(() => import('./pages/Contact'))
 const Aszf = lazy(() => import('./pages/Aszf'))
+const About = lazy(() => import('./pages/About'))
 
 // Betöltési indikátor, amíg az aloldal JavaScriptje letöltődik
 const PageLoader = () => (
@@ -36,6 +37,7 @@ function App() {
           <Route path="/galeria" element={<Gallery />} />
           <Route path="/kapcsolat" element={<Contact />} />
           <Route path="/aszf" element={<Aszf />} />
+          <Route path="/rolunk" element={<About />} />
         </Routes>
       </Suspense>
       <Footer />

@@ -8,6 +8,7 @@ const navLinks = [
   { label: 'Autó detailing', path: '/szolgaltatasok' },
   { label: 'Egyéb szolgáltatásaim', path: '/csomagok' },
   { label: 'Galéria', path: '/galeria' },
+  { label: 'A Los Customsról', path: '/rolunk' },
 ]
 
 const Navbar = () => {
