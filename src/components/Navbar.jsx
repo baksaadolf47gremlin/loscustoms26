@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
@@ -13,13 +13,41 @@ const navLinks = [
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
   const location = useLocation()
-  const [isMounted, setIsMounted] = useState(false)
-
-  useEffect(() => setIsMounted(true), [])
+  
+  const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0, opacity: 0 })
+  const [isReady, setIsReady] = useState(false)
+  const navRef = useRef(null)
 
   useEffect(() => {
     setIsOpen(false)
     window.scrollTo({ top: 0, behavior: 'instant' })
+  }, [location.pathname])
+
+  useEffect(() => {
+    const measure = () => {
+      if (!navRef.current) return;
+      const activeEl = navRef.current.querySelector('.active-nav-link');
+      if (activeEl) {
+        setIndicatorStyle({
+          left: activeEl.offsetLeft,
+          width: activeEl.offsetWidth,
+          opacity: 1
+        });
+      } else {
+        setIndicatorStyle(prev => ({ ...prev, opacity: 0 }));
+      }
+    };
+
+    measure();
+    const t = setTimeout(measure, 50);
+    const readyTimer = setTimeout(() => setIsReady(true), 150);
+    
+    window.addEventListener('resize', measure);
+    return () => {
+      clearTimeout(t);
+      clearTimeout(readyTimer);
+      window.removeEventListener('resize', measure);
+    };
   }, [location.pathname])
 
   // Lock body scroll when mobile menu is open
@@ -45,37 +73,36 @@ const Navbar = () => {
             </Link>
 
             {/* Desktop Nav */}
-            <div className="hidden md:flex items-center gap-8">
-              {navLinks.map((link) => (
+            <nav ref={navRef} className="hidden md:flex items-center gap-8 relative">
+              {navLinks.map((link) => {
+                const isActive = location.pathname === link.path;
+                return (
                 <Link
                   key={link.path}
                   to={link.path}
-                  className={`relative text-sm font-medium tracking-wide transition-colors duration-200 group ${
-                    location.pathname === link.path
-                      ? 'text-accent'
+                  className={`text-sm font-medium tracking-wide transition-colors duration-200 group ${
+                    isActive
+                      ? 'active-nav-link text-accent'
                       : 'text-light/60 hover:text-light'
                   }`}
                 >
                   {link.label}
-                  {isMounted && location.pathname === link.path && (
-                    <motion.span
-                      layoutId="nav-underline"
-                      className="absolute -bottom-1 left-0 right-0 h-[2px] bg-accent"
-                      initial={false}
-                      transition={{
-                        type: 'spring',
-                        stiffness: 350,
-                        damping: 30,
-                        mass: 1,
-                      }}
-                    />
-                  )}
                 </Link>
-              ))}
+              )})}
               <Link to="/kapcsolat" className="btn-gold text-sm">
                 Kapcsolat
               </Link>
-            </div>
+
+              {/* Seamless Indicator Line */}
+              <div 
+                className={`absolute -bottom-1 h-[2px] bg-accent pointer-events-none ${isReady ? 'transition-all duration-500 ease-[cubic-bezier(0.25,1,0.5,1)]' : ''}`}
+                style={{ 
+                  left: `${indicatorStyle.left}px`, 
+                  width: `${indicatorStyle.width}px`, 
+                  opacity: indicatorStyle.opacity 
+                }}
+              />
+            </nav>
 
             {/* Mobile Menu Button */}
             <button
