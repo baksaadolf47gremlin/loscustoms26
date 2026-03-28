@@ -21,7 +21,13 @@ const Footer = () => {
           {/* Brand */}
           <div className="md:col-span-6 lg:col-span-5">
             <Link to="/">
-              <img src="/images/work/logo.png" alt="Los Customs Logo" className="h-[90px] w-auto mb-6" />
+              <img 
+                src="/images/work/logo.png" 
+                alt="Los Customs Logo" 
+                className="h-[90px] w-auto mb-6" 
+                width="200"
+                height="90"
+              />
             </Link>
             <p className="text-light/80 text-sm leading-relaxed mb-6 max-w-xs">
               Prémium autódetailing Budapest szívében. Polír, kerámia bevonat, kárpit kezelés csak a legjobb minőségben.
@@ -60,7 +66,7 @@ const Footer = () => {
 
           {/* Navigation */}
           <div className="md:col-span-2 lg:col-span-3">
-            <h4 className="font-heading font-bold text-sm tracking-widest text-light/40 uppercase mb-5">Navigáció</h4>
+            <h3 className="font-heading font-bold text-sm tracking-widest text-light/60 uppercase mb-5">Navigáció</h3>
             <ul className="flex flex-col gap-3">
               {navLinks.map(link => (
                 <li key={link.path}>
@@ -77,7 +83,7 @@ const Footer = () => {
 
           {/* Contact */}
           <div className="md:col-span-4 lg:col-span-4">
-            <h4 className="font-heading font-bold text-sm tracking-widest text-light/40 uppercase mb-5">Kapcsolat</h4>
+            <h3 className="font-heading font-bold text-sm tracking-widest text-light/60 uppercase mb-5">Kapcsolat</h3>
             <ul className="flex flex-col gap-4">
               <li>
                 <a href="tel:+36709912761" className="flex items-center gap-3 group">
@@ -121,7 +127,7 @@ const Footer = () => {
             <div className="md:col-span-2 lg:col-span-3 lg:text-left">
               Prémium autódetailing · Budapest
             </div>
-            <div className="md:col-span-4 lg:col-span-4 lg:text-left text-light/50 hover:text-light transition-colors">
+            <div className="md:col-span-4 lg:col-span-4 lg:text-left text-light/70 hover:text-light transition-colors">
               <Link to="/aszf" className="hover:text-accent transition-colors">ÁSZF</Link>
             </div>
           </div>

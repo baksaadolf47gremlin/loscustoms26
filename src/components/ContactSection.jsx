@@ -191,6 +191,7 @@ const ContactSection = () => {
                 className="absolute inset-0 w-full h-full opacity-60" 
                 style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) contrast(1.2)' }} 
                 allowFullScreen="" 
+                title="Los Customs Budapest Telephely"
                 referrerPolicy="no-referrer-when-downgrade"
             ></iframe>
             

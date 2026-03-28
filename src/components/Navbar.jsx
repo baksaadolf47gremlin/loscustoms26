@@ -68,9 +68,14 @@ const Navbar = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between h-20">
 
-            {/* Logo */}
             <Link to="/" className="flex items-center group">
-              <img src="/images/work/logo.png" alt="Los Customs Logo" className="h-[70px] w-auto transition-transform duration-300 group-hover:scale-105" />
+              <img 
+                src="/images/work/logo.png" 
+                alt="Los Customs Logo" 
+                className="h-[70px] w-auto transition-transform duration-300 group-hover:scale-105" 
+                width="153"
+                height="70"
+              />
             </Link>
 
             {/* Desktop Nav */}
