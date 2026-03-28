@@ -212,8 +212,8 @@ const GalleryPreview = () => (
                 className="w-full h-full object-cover rounded-xl"
                 loading="lazy"
               />
-              {/* Elegáns vízjel - Optikai középpontra igazítva a logó belső margója miatt */}
-              <div className="absolute -bottom-1 left-4 z-10 pointer-events-none opacity-35 group-hover:opacity-70 transition-opacity duration-500">
+              {/* Elegáns vízjel - Jobb margókkal az egyenletesebb megjelenésért */}
+              <div className="absolute bottom-4 left-4 z-10 pointer-events-none opacity-40 group-hover:opacity-80 transition-opacity duration-500">
                 <img 
                   src="/images/work/logo.png" 
                   alt="Los Customs Vízjel" 

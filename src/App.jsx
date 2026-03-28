@@ -1,5 +1,5 @@
 import { Suspense, lazy } from 'react'
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom'
 import { Analytics } from '@vercel/analytics/react'
 import { SpeedInsights } from '@vercel/speed-insights/react'
 import Navbar from './components/Navbar'
@@ -38,6 +38,16 @@ function App() {
           <Route path="/kapcsolat" element={<Contact />} />
           <Route path="/aszf" element={<Aszf />} />
           <Route path="/rolunk" element={<About />} />
+          
+          {/* Angol nyelvű URL átirányítások (Redirects) */}
+          <Route path="/services" element={<Navigate to="/szolgaltatasok" replace />} />
+          <Route path="/packages" element={<Navigate to="/csomagok" replace />} />
+          <Route path="/gallery" element={<Navigate to="/galeria" replace />} />
+          <Route path="/contact" element={<Navigate to="/kapcsolat" replace />} />
+          <Route path="/about" element={<Navigate to="/rolunk" replace />} />
+          
+          {/* 404 - Oldal nem található redirect a főoldalra */}
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Suspense>
       <Footer />

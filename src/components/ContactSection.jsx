@@ -148,12 +148,14 @@ const ContactSection = () => {
                 {/* Mock Cloudflare Turnstile */}
                 <div className="flex items-center justify-between bg-white/5 border border-white/20 p-4 rounded-sm">
                   <div className="flex items-center gap-3">
-                     <CheckCircle size={20} className="text-green-500" />
-                     <span className="text-sm font-medium text-light">Success!</span>
+                     <div className="w-5 h-5 border border-white/30 rounded-sm flex items-center justify-center p-0.5">
+                        <div className="w-full h-full bg-accent rounded-sm opacity-0 group-hover:opacity-100 transition-opacity" />
+                     </div>
+                     <span className="text-sm font-medium text-light/80">I am human</span>
                   </div>
                   <div className="flex flex-col items-end">
-                    <span className="text-[10px] font-bold text-light/70 tracking-widest">CLOUDFLARE</span>
-                    <div className="text-[8px] text-light/40 flex gap-1">
+                    <span className="text-[10px] font-bold text-light/70 tracking-widest leading-none">CLOUDFLARE</span>
+                    <div className="text-[8px] text-light/40 flex gap-1 mt-1">
                       <a href="#" className="hover:underline">Privacy</a> • <a href="#" className="hover:underline">Terms</a>
                     </div>
                   </div>
