@@ -109,21 +109,21 @@ const StatsBar = () => (
 // ─── Services Preview ─────────────────────────────────────────────────────────
 const serviceCards = [
   {
-    icon: <img src="/images/kulsoreszletezes_ikon.png" alt="Ikon" className="w-16 h-16 object-contain" decoding="async" />,
+    icon: <img src="/images/kulsoreszletezes_ikon.webp" alt="Ikon" className="w-16 h-16 object-contain" decoding="async" />,
     title: 'Külső részletezés',
     desc: 'Polír, kerámia bevonat, fényszóró polírozás, rovareltávolítás. Az autód külseje újat varázslunk.',
     link: '/szolgaltatasok',
     img: '/images/kulosreszletezes.webp',
   },
   {
-    icon: <img src="/images/belsotakaritas_ikon.png" alt="Ikon" className="w-16 h-16 object-contain" decoding="async" />,
+    icon: <img src="/images/belsotakaritas_ikon.webp" alt="Ikon" className="w-16 h-16 object-contain" decoding="async" />,
     title: 'Belső takarítás',
     desc: 'Mélytisztítás, kárpit kezelés, bőrápolás, üveg tisztítás. Csillogó beltér minden alkalommal.',
     link: '/szolgaltatasok',
     img: '/images/belsotakaritas.webp',
   },
   {
-    icon: <img src="/images/specialiskezelesek_ikon.png" alt="Ikon" className="w-16 h-16 object-contain" decoding="async" />,
+    icon: <img src="/images/specialiskezelesek_ikon.webp" alt="Ikon" className="w-16 h-16 object-contain" decoding="async" />,
     title: 'Speciális kezelések',
     desc: 'Kerámia bevonatok, prémium polírozás, kárpit kezelés külön csomagokban – maximális védelem.',
     link: '/csomagok',
@@ -217,7 +217,7 @@ const GalleryPreview = () => (
               {/* Elegáns vízjel - Jobb margókkal az egyenletesebb megjelenésért */}
               <div className="absolute bottom-4 left-4 z-10 pointer-events-none opacity-40 group-hover:opacity-80 transition-opacity duration-500">
                 <img 
-                  src="/images/work/logo.png" 
+                  src="/images/work/logo.webp" 
                   alt="Los Customs Vízjel" 
                   className="w-20 sm:w-24 h-auto drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)] filter grayscale contrast-125" 
                 />

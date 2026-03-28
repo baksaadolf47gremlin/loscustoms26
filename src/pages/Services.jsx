@@ -8,7 +8,7 @@ const detailingPackages = [
     tag: 'Fényesítő polírozás',
     title: 'Alap Szolgáltatásaim',
     img: '/images/alapszolgaltatasaimkartya-v5.webp',
-    icon: <img src="/icons/szivacs.png" alt="Szivacs Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] relative z-10" />,
+    icon: <img src="/icons/szivacs.webp" alt="Szivacs Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] relative z-10" />,
     priceText: 'Kezdő ár',
     priceValue: '59.000 - 69.000 Ft',
     items: [
@@ -29,7 +29,7 @@ const detailingPackages = [
     title: 'Prémium Detailing Opciók',
     img: '/images/premiumdetailingopciokkartya-v4.webp',
     imgPosition: 'object-bottom',
-    icon: <img src="/icons/szivacspremium.png" alt="Prémium Szivacs Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] relative z-10" />,
+    icon: <img src="/icons/szivacspremium.webp" alt="Prémium Szivacs Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] relative z-10" />,
     priceText: 'Kezdő ár',
     priceValue: '99.000 Ft - 169.000 Ft',
     items: [
@@ -50,7 +50,7 @@ const detailingPackages = [
     tag: '(1-2 óra)',
     title: 'Külső mosás opciók',
     img: '/images/kulsomosasopciok-v3.webp',
-    icon: <img src="/icons/vizcsepp.png" alt="Vízcsepp Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] relative z-10" />,
+    icon: <img src="/icons/vizcsepp.webp" alt="Vízcsepp Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] relative z-10" />,
     priceText: 'Kezdő ár',
     priceValue: '13.000 Ft-tól',
     items: [
@@ -69,7 +69,7 @@ const detailingPackages = [
     tag: '1-5 éves kerámia bevonat',
     title: 'Autóvédelem',
     img: '/images/autovedelem-v3.webp',
-    icon: <img src="/icons/pajzs.png" alt="Pajzs Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] relative z-10" />,
+    icon: <img src="/icons/pajzs.webp" alt="Pajzs Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] relative z-10" />,
     prices: [
       { label: '1 éves', price: '49.000 Ft' },
       { label: '3 éves', price: '99.000 Ft' },

@@ -70,7 +70,7 @@ const Navbar = () => {
 
             <Link to="/" className="flex items-center group">
               <img 
-                src="/images/work/logo.png" 
+                src="/images/work/logo.webp" 
                 alt="Los Customs Logo" 
                 className="h-[70px] w-auto transition-transform duration-300 group-hover:scale-105" 
                 width="153"

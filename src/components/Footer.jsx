@@ -22,7 +22,7 @@ const Footer = () => {
           <div className="md:col-span-6 lg:col-span-5">
             <Link to="/">
               <img 
-                src="/images/work/logo.png" 
+                src="/images/work/logo.webp" 
                 alt="Los Customs Logo" 
                 className="h-[90px] w-auto mb-6" 
                 width="200"
