@@ -123,8 +123,10 @@ const Gallery = () => {
                 <img
                   src={img.src}
                   alt={`Los Customs referencia ${i + 1}`}
-                  className="w-full h-auto rounded-xl object-cover block"
-                  loading="lazy"
+                  className="w-full h-auto rounded-xl object-cover block bg-white/5"
+                  loading={i < 6 ? "eager" : "lazy"}
+                  fetchpriority={i < 6 ? "high" : "auto"}
+                  decoding="async"
                 />
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 rounded-xl flex items-center justify-center">
                   <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-xs font-medium tracking-wider uppercase">

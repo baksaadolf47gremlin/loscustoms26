@@ -91,7 +91,8 @@ const SliderCard = ({ pair, index }) => {
           src={pair.after}
           alt={`${pair.title} – utánna`}
           className="absolute inset-0 w-full h-full object-cover"
-          loading="lazy"
+          loading={index === 0 ? "eager" : "lazy"}
+          decoding="async"
           draggable={false}
           style={pair.styleAfter}
         />
@@ -105,7 +106,9 @@ const SliderCard = ({ pair, index }) => {
             src={pair.before}
             alt={`${pair.title} – előtte`}
             className="w-full h-full object-cover"
-            loading="eager"
+            loading={index === 0 ? "eager" : "lazy"}
+            fetchpriority={index === 0 ? "high" : "auto"}
+            decoding="async"
             draggable={false}
             style={pair.styleBefore}
           />
