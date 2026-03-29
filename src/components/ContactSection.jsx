@@ -28,7 +28,15 @@ const ContactSection = () => {
         body: json
       })
       
-      const data = await response.json()
+      const text = await response.text()
+      let data
+      try {
+        data = JSON.parse(text)
+      } catch {
+        console.error('Web3Forms non-JSON response:', text.slice(0, 200))
+        alert("A form jelenleg nem érhető el. Kérjük hívj minket telïonon!")
+        return
+      }
       
       if (data.success) {
         setIsSubmitted(true)

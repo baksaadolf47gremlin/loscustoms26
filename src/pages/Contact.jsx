@@ -43,19 +43,35 @@ const Contact = () => {
     try {
       const res = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
         body: JSON.stringify({
           access_key: 'd5e48e41-a88b-45d3-8d44-3ea3ff3890d0',
           subject: `Los Customs – Üzenet: ${form.name}`,
-          from_name: 'Los Customs Üzenet',
+          from_name: 'Los Customs Weboldal',
+          name: form.name,
           email: form.email,
           phone: form.phone,
           message: form.message,
         }),
       })
-      if (res.ok) setStatus('success')
-      else setStatus('error')
-    } catch {
+      const text = await res.text()
+      let data
+      try {
+        data = JSON.parse(text)
+      } catch {
+        // HTML response = API key blocked / invalid
+        console.error('Web3Forms non-JSON response (403?):', text.slice(0, 200))
+        setStatus('error')
+        return
+      }
+      if (data.success) {
+        setStatus('success')
+      } else {
+        console.error('Web3Forms error:', data.message)
+        setStatus('error')
+      }
+    } catch (err) {
+      console.error('Network error:', err)
       setStatus('error')
     }
   }
