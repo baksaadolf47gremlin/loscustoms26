@@ -112,7 +112,7 @@ const StatsBar = () => (
 const serviceCards = [
   {
     icon: <img src="/images/kulsoreszletezes_ikon.webp" alt="Ikon" className="w-16 h-16 object-contain" decoding="async" />,
-    title: 'Külső részletezés',
+    title: ' Külső ápolás ',
     desc: 'Polír, kerámia bevonat, fényszóró polírozás, rovareltávolítás. Az autód külseje újat varázslunk.',
     link: '/szolgaltatasok',
     img: '/images/kulosreszletezes.webp',
@@ -188,8 +188,8 @@ const galleryImages = [
   '/images/gallery/group_63_1x.webp',
   '/images/gallery/group_65_1x.webp',
   '/images/gallery/group_74_1x.webp',
-  '/images/gallery/group_61_1x.webp',
-  '/images/gallery/group_60_1x.webp',
+  '/images/gallery/image-11.png',
+  '/images/gallery/group_66_1x.webp',
 ]
 
 const GalleryPreview = () => (

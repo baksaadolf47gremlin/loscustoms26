@@ -59,8 +59,6 @@ const detailingPackages = [
       'Felni tisztítás',
       'Szálló rozsda eltávolítása és szárítás',
       'Kézi autómosás',
-      'Szárítás',
-      'Alapvédelem',
     ],
     color: 'border-white/10',
   },

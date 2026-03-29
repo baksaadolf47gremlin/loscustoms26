@@ -76,17 +76,17 @@ const About = () => {
           <div className="lg:col-span-5 relative h-[500px] md:h-[600px] flex items-center justify-center mt-16 lg:mt-0">
             <ScrollReveal delay={0.2} className="w-full h-full relative">
               
-              {/* Alap (hátsó) kép - Polírozós (Bal felül) */}
-              <div className="absolute top-0 left-2 w-[70%] md:w-[65%] aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 shadow-lg transform rotate-3 hover:rotate-0 transition-all duration-500 z-10">
+              {/* Alap (hátsó) kép - Autós (Bal felül) */}
+              <div className="absolute top-4 left-0 w-[85%] md:w-[90%] aspect-[4/3] md:aspect-video rounded-2xl overflow-hidden border-2 border-accent shadow-[0_0_30px_rgba(232,184,75,0.15)] transform rotate-2 hover:rotate-0 transition-all duration-500 z-10">
                 <img 
-                  src="/images/bemutatkozas_kep_1.webp" 
-                  alt="Autó polírozás munka közben" 
+                  src="/images/audi_bemutatkozas.webp" 
+                  alt="Los Customs - Kék Audi elkészült munka" 
                   className="w-full h-full object-cover"
                 />
               </div>
 
               {/* Elülső kép - Fotózkodós (Jobb alul) */}
-              <div className="absolute bottom-4 right-2 w-[70%] md:w-[65%] aspect-[3/4] rounded-2xl overflow-hidden border-2 border-accent shadow-[0_0_30px_rgba(232,184,75,0.15)] transform -rotate-3 hover:rotate-0 transition-all duration-500 z-20 hover:z-30">
+              <div className="absolute top-[35%] md:top-[40%] right-[18%] md:right-[24%] w-[60%] md:w-[55%] aspect-[3/4] rounded-2xl overflow-hidden border-2 border-accent shadow-[0_0_30px_rgba(232,184,75,0.15)] transform -rotate-3 hover:rotate-0 transition-all duration-500 z-20 hover:z-30">
                 <img 
                   src="/images/bemutatkozas_kep_2.webp" 
                   alt="Los Customs alapítója" 

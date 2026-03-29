@@ -31,9 +31,9 @@ const treatments = [
     badge: null,
     img: '/images/gallery/group_99_1x.webp',
     items: [
-      'Fotel / szék tisztítás',
-      'Szőnyeg tisztítás',
-      'Kanapé tisztítás',
+      'Padlószőnyeg',
+      'Padlókárpit',
+      'Üléskárpit',
     ]
   },
 ]
@@ -102,6 +102,58 @@ const Packages = () => (
           </div>
         ))}
       </div>
+    </section>
+    
+    {/* Extra Horizontal Card */}
+    {/* Extra Horizontal Card */}
+    <section className="pb-24 px-4 max-w-6xl mx-auto -mt-12 md:-mt-16">
+      <ScrollReveal>
+        <div className="glass-card overflow-hidden group flex flex-col md:flex-row md:h-[310px] transition-all duration-300 hover:shadow-gold rounded-2xl border border-white/5 bg-card shadow-card">
+          {/* Image */}
+          <div className="md:w-[45%] lg:w-[40%] relative h-[250px] md:h-full overflow-hidden bg-white/5">
+            <img
+              src="/images/gallery/szekkarpit.jpg"
+              alt="Otthoni tisztítás"
+              className="w-full h-full object-cover object-left transition-transform duration-700 group-hover:scale-105"
+            />
+            
+            {/* Badge placed on the image like the other cards to save space */}
+            <span className="absolute top-4 right-4 bg-accent text-black text-[10px] font-heading font-bold px-3 py-1 rounded-full tracking-wider uppercase shadow-lg">
+              Új szolgáltatás
+            </span>
+          </div>
+
+          {/* Content */}
+          <div className="md:w-[55%] lg:w-[60%] p-8 md:p-10 flex flex-col">
+            <h3 className="font-heading font-extrabold text-2xl text-light mb-2">Otthoni tisztítás</h3>
+            <p className="text-muted text-xs mb-6 font-medium tracking-widest uppercase opacity-80">
+              Házhoz megyek! Professzionális tisztítás az otthonában is.
+            </p>
+            
+            <ul className="flex flex-col gap-3 flex-1 mb-6">
+              {[
+                'Otthoni kárpit',
+                'Fotelek, kanapék',
+                'Szőnyegek',
+              ].map((item, j) => (
+                <li key={j} className="flex items-center gap-2.5 text-sm text-light/70">
+                  <Check size={14} className="text-accent flex-shrink-0" />
+                  <span className="truncate">{item}</span>
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-auto">
+              <Link
+                to="/kapcsolat"
+                className="btn-gold inline-block w-full sm:w-auto"
+              >
+                Időpont foglalás / Érdeklődés
+              </Link>
+            </div>
+          </div>
+        </div>
+      </ScrollReveal>
     </section>
 
     {/* Note */}

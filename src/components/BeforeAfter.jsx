@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 
 const pairs = [
   {
-    title: 'Felni polírozás',
+    title: ' Felni / Gumi ápolás ',
     before: '/images/before-after/img_9364_1_4x.webp',
     after: '/images/before-after/img_9366_1_4x.webp',
   },
@@ -107,7 +107,7 @@ const SliderCard = ({ pair, index }) => {
             alt={`${pair.title} – előtte`}
             className="w-full h-full object-cover"
             loading={index === 0 ? "eager" : "lazy"}
-            fetchpriority={index === 0 ? "high" : "auto"}
+            fetchPriority={index === 0 ? "high" : "auto"}
             decoding="async"
             draggable={false}
             style={pair.styleBefore}
