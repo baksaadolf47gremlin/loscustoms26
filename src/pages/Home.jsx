@@ -184,12 +184,12 @@ const ServicesPreview = () => (
 
 // ─── Gallery Preview ──────────────────────────────────────────────────────────
 const galleryImages = [
-  '/images/gallery/image_125_1x.webp',
-  '/images/gallery/group_63_1x.webp',
-  '/images/gallery/group_65_1x.webp',
-  '/images/gallery/group_74_1x.webp',
-  '/images/gallery/image-11.png',
-  '/images/gallery/group_66_1x.webp',
+  '/images/gallery/image_125_1x.webp?v=2',
+  '/images/gallery/group_63_1x.webp?v=2',
+  '/images/gallery/group_65_1x.webp?v=2',
+  '/images/gallery/group_74_1x.webp?v=2',
+  '/images/gallery/image-11.png?v=2',
+  '/images/gallery/group_66_1x.webp?v=2',
 ]
 
 const GalleryPreview = () => (
