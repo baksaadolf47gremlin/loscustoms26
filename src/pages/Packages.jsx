@@ -5,18 +5,18 @@ import ScrollReveal from '../components/ScrollReveal'
 const treatments = [
   {
     name: 'Polír csomag',
-    price: '8.000',
+    price: '59.000',
     badge: null,
     img: '/images/gallery/polir-csomag.webp',
     items: [
       'Fényesítő polír',
       'Többlépéses polírozás',
-      'Lámpa polírozása',
+      <span>Lámpa polírozása <span className="text-accent/80 text-xs ml-1">( 20.000 Ft )</span></span>,
     ]
   },
   {
     name: 'Kerámia bevonatok',
-    price: '8.000',
+    price: '50.000',
     badge: 'Legjobb védelem',
     img: '/images/gallery/keramiabevonat.webp',
     items: [
@@ -94,9 +94,12 @@ const Packages = () => (
               </ul>
               <Link
                 to="/kapcsolat"
-                className="btn-gold w-full text-center"
+                className={i === 1
+                  ? "btn-gold w-full text-center"
+                  : "block mx-auto w-[90%] text-center rounded-xl font-heading font-bold tracking-wider transition-all duration-300 py-3.5 text-xs bg-white/5 text-light hover:bg-accent hover:text-black border border-white/10 hover:border-transparent"
+                }
               >
-                Időpont foglalás
+                {i === 1 ? 'Időpont foglalás' : 'Érdekel'}
               </Link>
             </div>
           </div>
@@ -132,13 +135,15 @@ const Packages = () => (
             
             <ul className="flex flex-col gap-3 flex-1 mb-6">
               {[
-                'Otthoni kárpit',
-                'Fotelek, kanapék',
-                'Szőnyegek',
+                { name: 'Fotel', price: '15.000 Ft-tól' },
+                { name: 'Kanapé', price: '35.000 Ft-tól' },
+                { name: 'Szőnyegek', price: '25.000 Ft-tól' },
               ].map((item, j) => (
                 <li key={j} className="flex items-center gap-2.5 text-sm text-light/70">
                   <Check size={14} className="text-accent flex-shrink-0" />
-                  <span className="truncate">{item}</span>
+                  <span className="truncate">
+                    {item.name} <span className="text-accent/80 text-xs ml-1">( {item.price} )</span>
+                  </span>
                 </li>
               ))}
             </ul>
