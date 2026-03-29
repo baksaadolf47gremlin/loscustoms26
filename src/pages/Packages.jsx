@@ -82,7 +82,7 @@ const Packages = () => (
               <h3 className="font-heading font-extrabold text-2xl text-light mb-1">{t.name}</h3>
               <div className="flex items-end gap-1 mb-5">
                 <span className="font-heading font-black text-3xl text-accent">{t.price}</span>
-                <span className="text-muted text-sm mb-1">Ft-tól</span>
+                <span className="text-accent/80 text-sm mb-1">Ft-tól</span>
               </div>
               <ul className="flex flex-col gap-3 flex-1 mb-8">
                 {t.items.map((item, j) => (

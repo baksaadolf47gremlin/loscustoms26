@@ -5,7 +5,6 @@ import ScrollReveal from '../components/ScrollReveal'
 const detailingPackages = [
   {
     id: 'detailing-1',
-    tag: 'Fényesítő polírozás',
     title: 'Alap Szolgáltatásaim',
     img: '/images/alapszolgaltatasaimkartya-v5.webp',
     icon: <img src="/icons/szivacs.webp" alt="Szivacs Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] relative z-10" />,
@@ -25,7 +24,6 @@ const detailingPackages = [
   },
   {
     id: 'detailing-2',
-    tag: 'Több lépcsős fényezés korrekciós polírozás',
     title: 'Prémium Detailing Opciók',
     img: '/images/premiumdetailingopciokkartya-v4.webp',
     imgPosition: 'object-bottom',
@@ -47,7 +45,6 @@ const detailingPackages = [
   },
   {
     id: 'washing',
-    tag: '(1-2 óra)',
     title: 'Külső mosás opciók',
     img: '/images/kulsomosasopciok-v3.webp',
     icon: <img src="/icons/vizcsepp.webp" alt="Vízcsepp Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] relative z-10" />,
@@ -64,7 +61,6 @@ const detailingPackages = [
   },
   {
     id: 'protection',
-    tag: '1-5 éves kerámia bevonat',
     title: 'Autóvédelem',
     img: '/images/autovedelem-v3.webp',
     icon: <img src="/icons/pajzs.webp" alt="Pajzs Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] relative z-10" />,
@@ -162,10 +158,10 @@ const CustomPackageCard = ({ pkg, delay = 0 }) => (
         </div>
       )}
       
-      {!pkg.highlight && (
+      {!pkg.highlight && pkg.tag && (
         <span className="text-[10px] font-heading font-bold tracking-[0.2em] text-muted uppercase mb-2 block">{pkg.tag}</span>
       )}
-      {pkg.highlight && (
+      {pkg.highlight && pkg.tag && (
          <span className="text-[10px] font-heading font-bold tracking-[0.2em] text-accent uppercase mb-2 block">{pkg.tag}</span>
       )}
 
