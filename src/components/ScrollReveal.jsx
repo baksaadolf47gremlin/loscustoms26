@@ -8,6 +8,7 @@ const ScrollReveal = ({
   className = '',
   once = true,
 }) => {
+  const isMobile = typeof window !== 'undefined' ? window.innerWidth < 768 : false;
   const ref = useRef(null)
   const isInView = useInView(ref, { once, margin: '-80px 0px' })
   const controls = useAnimation()
@@ -31,9 +32,14 @@ const ScrollReveal = ({
   }
 
   useEffect(() => {
+    if (isMobile) return;
     if (isInView) controls.start('visible')
     else if (!once) controls.start('hidden')
-  }, [isInView, controls, once])
+  }, [isInView, controls, once, isMobile])
+
+  if (isMobile) {
+    return <div className={className}>{children}</div>
+  }
 
   return (
     <motion.div
