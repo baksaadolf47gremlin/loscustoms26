@@ -4,9 +4,11 @@ import { Phone, Mail, MapPin, Clock, CheckCircle } from 'lucide-react'
 const ContactSection = () => {
   const [isSubmitted, setIsSubmitted] = useState(false)
   const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isHuman, setIsHuman] = useState(false)
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    if (!isHuman) return;
     setIsSubmitting(true)
 
     const formData = new FormData(e.target)
@@ -153,25 +155,28 @@ const ContactSection = () => {
                   <textarea name="Uzenet" rows="4" placeholder="Írd le az autód típusát és az igényeidet..." className="bg-white/5 border border-white/10 p-3 text-sm text-light placeholder-light/30 focus:outline-none focus:border-accent transition-colors resize-none rounded-none" required></textarea>
                 </div>
 
-                {/* Mock Cloudflare Turnstile */}
-                <div className="flex items-center justify-between bg-white/5 border border-white/20 p-4 rounded-sm">
+                {/* Interactive Mock Cloudflare Turnstile */}
+                <div 
+                  className="flex items-center justify-between bg-white/5 border border-white/20 p-4 rounded-sm cursor-pointer select-none group"
+                  onClick={() => setIsHuman(true)}
+                >
                   <div className="flex items-center gap-3">
                      <div className="w-5 h-5 border border-white/30 rounded-sm flex items-center justify-center p-0.5">
-                        <div className="w-full h-full bg-accent rounded-sm opacity-0 group-hover:opacity-100 transition-opacity" />
+                        <div className={`w-full h-full bg-accent rounded-sm transition-opacity ${isHuman ? 'opacity-100' : 'opacity-0'}`} />
                      </div>
                      <span className="text-sm font-medium text-light/80">I am human</span>
                   </div>
                   <div className="flex flex-col items-end">
                     <span className="text-[10px] font-bold text-light/70 tracking-widest leading-none">CLOUDFLARE</span>
                     <div className="text-[8px] text-light/40 flex gap-1 mt-1">
-                      <a href="#" className="hover:underline">Privacy</a> • <a href="#" className="hover:underline">Terms</a>
+                      <span className="hover:underline">Privacy</span> • <span className="hover:underline">Terms</span>
                     </div>
                   </div>
                 </div>
 
                 <button 
                   type="submit" 
-                  disabled={isSubmitting || isSubmitted} 
+                  disabled={isSubmitting || isSubmitted || !isHuman} 
                   className={`w-full font-bold tracking-widest uppercase py-4 transition-colors font-heading text-sm disabled:cursor-not-allowed ${
                     isSubmitted 
                       ? "bg-green-500 text-white" 
