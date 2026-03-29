@@ -27,6 +27,7 @@ const Hero = () => {
           playsInline
           preload="auto"
           fetchpriority="high"
+          poster="/images/hero-poster.webp"
           className="hidden md:block absolute inset-0 w-full h-full object-cover z-0"
         >
           {/* Multiple sources for responsive WebM and optimized MP4 streaming */}
@@ -41,6 +42,7 @@ const Hero = () => {
           loop
           playsInline
           preload="auto"
+          poster="/images/hellyeah-poster.webp"
           className="block md:hidden absolute inset-0 w-full h-full object-cover z-0"
         >
           <source src="/videos/hellyeah.mp4" type="video/mp4" />
