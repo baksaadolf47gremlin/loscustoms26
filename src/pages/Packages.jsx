@@ -171,8 +171,8 @@ const Packages = () => (
           </p>
           <div className="flex flex-wrap gap-4 justify-center">
             <Link to="/kapcsolat" className="btn-gold">Egyedi ajánlat kérése</Link>
-            <a href="tel:+36709912761" className="btn-outline flex items-center gap-2">
-              <Phone size={14} /> +36 70 991 2761
+            <a href="tel:+36307582472" className="btn-outline flex items-center gap-2">
+              <Phone size={14} /> +36 30 758 2472
             </a>
           </div>
         </div>

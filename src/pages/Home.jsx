@@ -263,11 +263,11 @@ const CTABanner = () => (
             Kapcsolatfelvétel
           </Link>
           <a 
-            href="tel:+36709912761"
+            href="tel:+36307582472"
             className="btn-outline flex items-center gap-2"
           >
             <Phone size={15} />
-            +36 70 991 2761
+            +36 30 758 2472
           </a>
         </div>
       </ScrollReveal>

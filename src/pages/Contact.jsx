@@ -6,9 +6,9 @@ const contactInfo = [
   {
     icon: <Phone size={20} className="text-accent" />,
     label: 'Telefon',
-    value: '+36 70 991 2761',
-    sub: '+36 30 758 2472',
-    href: 'tel:+36709912761',
+    value: '+36 30 758 2472',
+    sub: '+36 70 991 2761',
+    href: 'tel:+36307582472',
   },
   {
     icon: <Mail size={20} className="text-accent" />,

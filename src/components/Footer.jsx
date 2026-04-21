@@ -86,9 +86,9 @@ const Footer = () => {
             <h3 className="font-heading font-bold text-sm tracking-widest text-light/60 uppercase mb-5">Kapcsolat</h3>
             <ul className="flex flex-col gap-4">
               <li>
-                <a href="tel:+36709912761" className="flex items-center gap-3 group">
+                <a href="tel:+36307582472" className="flex items-center gap-3 group">
                   <Phone size={14} className="text-light/60 group-hover:text-accent transition-colors flex-shrink-0" />
-                  <span className="text-light/60 text-sm group-hover:text-accent transition-colors">+36 70 991 2761</span>
+                  <span className="text-light/60 text-sm group-hover:text-accent transition-colors">+36 30 758 2472</span>
                 </a>
               </li>
               <li>
