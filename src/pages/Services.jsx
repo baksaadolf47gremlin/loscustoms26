@@ -61,15 +61,17 @@ const detailingPackages = [
   },
   {
     id: 'protection',
-    title: 'Autóvédelem',
+    title: 'Autóvédelem & Kerámiabevonatok',
     img: '/images/autovedelem-v3.webp',
     icon: <img src="/icons/pajzs.webp" alt="Pajzs Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] relative z-10" />,
-    prices: [
-      { label: '1 éves', price: '49.000 Ft' },
-      { label: '3 éves', price: '99.000 Ft' },
-      { label: '5 éves', price: '149.000 Ft' },
+    priceText: 'Kezdő ár',
+    priceValue: '50.000 Ft-tól',
+    items: [
+      'Alapos előmosás',
+      'Zsírtalanítás',
+      'Kerámiabevonat felvitele az üvegre',
+      'Kerámiabevonat felvitele a karosszériára',
     ],
-    items: [],
     color: 'border-accent/40',
     highlight: true,
   },
