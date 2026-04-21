@@ -81,9 +81,9 @@ const comboPackages = [
   {
     id: 'combo-1',
     tag: '1-2 óra',
-    title: 'Belső tisztítás',
+    title: 'Basic Csomag',
     priceText: 'Kezdő ár',
-    priceValue: '18.000 Ft-tól',
+    priceValue: '30.000 Ft-tól',
     items: [
       'Alap belső takarítás',
       'Porszívózás',
@@ -95,9 +95,9 @@ const comboPackages = [
   {
     id: 'combo-2',
     tag: '2-3 óra',
-    title: 'Komplett mosás',
+    title: 'Premium Csomag',
     priceText: 'Kezdő ár',
-    priceValue: '35.000 Ft-tól',
+    priceValue: '40.000 Ft-tól',
     items: [
       'Alapos külső mosás',
       'Bogár oldás',
@@ -114,7 +114,7 @@ const comboPackages = [
   {
     id: 'combo-3',
     tag: '3-4 óra',
-    title: 'Prémium Komplett mosás',
+    title: 'Luxury Csomag',
     priceText: 'Kezdő ár',
     priceValue: '50.000 Ft-tól',
     items: [
