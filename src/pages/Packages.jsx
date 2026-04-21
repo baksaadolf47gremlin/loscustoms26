@@ -115,7 +115,7 @@ const Packages = () => (
           {/* Image */}
           <div className="md:w-[45%] lg:w-[40%] relative h-[250px] md:h-full overflow-hidden bg-white/5">
             <img
-              src="/images/gallery/szekkarpit.jpg"
+              src="/images/gallery/szekkarpit.webp"
               alt="Otthoni tisztítás"
               className="w-full h-full object-cover object-left transition-transform duration-700 group-hover:scale-105"
             />
@@ -135,9 +135,9 @@ const Packages = () => (
             
             <ul className="flex flex-col gap-3 flex-1 mb-6">
               {[
-                { name: 'Fotel', price: '15.000 Ft-tól' },
-                { name: 'Kanapé', price: '35.000 Ft-tól' },
-                { name: 'Szőnyegek', price: '25.000 Ft-tól' },
+                { name: 'Fotel', price: '10.000 Ft' },
+                { name: 'Kanapé', price: '25.000 Ft' },
+                { name: 'Matrac', price: '15.000 Ft' },
               ].map((item, j) => (
                 <li key={j} className="flex items-center gap-2.5 text-sm text-light/70">
                   <Check size={14} className="text-accent flex-shrink-0" />
