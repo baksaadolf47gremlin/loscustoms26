@@ -27,7 +27,7 @@ const treatments = [
   },
   {
     name: 'Kárpit kezelés',
-    price: '8.000',
+    price: '35.000',
     badge: null,
     img: '/images/gallery/group_99_1x.webp',
     items: [

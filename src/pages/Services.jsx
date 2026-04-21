@@ -9,7 +9,7 @@ const detailingPackages = [
     img: '/images/alapszolgaltatasaimkartya-v5.webp',
     icon: <img src="/icons/szivacs.webp" alt="Szivacs Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] relative z-10" />,
     priceText: 'Kezdő ár',
-    priceValue: '59.000 - 69.000 Ft',
+    priceValue: '59.000 - 75.000 Ft',
     items: [
       'Alapos külső mosás',
       'Bogár oldás',
