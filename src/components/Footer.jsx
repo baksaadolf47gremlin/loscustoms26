@@ -45,7 +45,7 @@ const Footer = () => {
               </a>
 
               <a
-                href="https://www.instagram.com/loscustoms"
+                href="https://www.instagram.com/loscustoms_01/"
                 target="_blank"
                 rel="noreferrer"
                 className="w-12 h-12 flex items-center justify-center opacity-80 hover:scale-110 hover:opacity-100 transition-all duration-300 drop-shadow-[0_0_10px_rgba(255,255,255,0.1)] cursor-pointer"
