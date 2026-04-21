@@ -85,7 +85,7 @@ const Hero = () => {
 
 // ─── Stats Bar ────────────────────────────────────────────────────────────────
 const stats = [
-  { value: '50+', label: 'Befejezett munka' },
+  { value: '250+', label: 'Befejezett munka' },
   { value: '5★', label: 'Értékelés' },
   { value: '3+', label: 'Év tapasztalat' },
   { value: 'Bp. 1194', label: 'Hoffer Albert u. 41.' },
