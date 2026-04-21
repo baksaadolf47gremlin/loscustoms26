@@ -99,16 +99,16 @@ const Footer = () => {
               </li>
               <li>
                 <a
-                  href="https://maps.google.com/?q=Budapest+1194+Hoffer+Albert+utca+41"
+                  href="https://maps.google.com/?q=Budapest+1205+Hatar+ut+70"
                   target="_blank"
                   rel="noreferrer"
                   className="flex items-start gap-3 group"
                 >
                   <MapPin size={14} className="text-light/60 group-hover:text-accent transition-colors mt-0.5 flex-shrink-0" />
                   <div className="text-light/60 text-sm group-hover:text-accent transition-colors leading-relaxed">
-                    Budapest, 1194
+                    Budapest, 1205
                     <br />
-                    Hoffer Albert utca 41.
+                    Határ út 70.
                   </div>
                 </a>
               </li>

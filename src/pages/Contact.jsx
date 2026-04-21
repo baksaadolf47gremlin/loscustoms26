@@ -19,9 +19,9 @@ const contactInfo = [
   {
     icon: <MapPin size={20} className="text-accent" />,
     label: 'Helyszín',
-    value: 'Budapest, 1194',
-    sub: 'Hoffer Albert utca 41.',
-    href: 'https://maps.google.com/?q=Budapest+1194+Hoffer+Albert+utca+41',
+    value: 'Budapest, 1205',
+    sub: 'Határ út 70.',
+    href: 'https://maps.google.com/?q=Budapest+1205+Hatar+ut+70',
   },
   {
     icon: <Clock size={20} className="text-accent" />,

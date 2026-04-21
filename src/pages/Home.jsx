@@ -65,7 +65,7 @@ const Hero = () => {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="section-label mb-2 text-[8px] sm:text-[10px] tracking-[0.2em]"
           >
-            Budapest, 1194 · Professzionális Autódetailing
+            Budapest, 1205 · Professzionális Autódetailing
           </motion.p>
 
           <motion.h1
@@ -88,7 +88,7 @@ const stats = [
   { value: '250+', label: 'Befejezett munka' },
   { value: '5★', label: 'Értékelés' },
   { value: '3+', label: 'Év tapasztalat' },
-  { value: 'Bp. 1194', label: 'Hoffer Albert u. 41.' },
+  { value: 'Bp. 1205', label: 'Határ út 70.' },
 ]
 
 const StatsBar = () => (
