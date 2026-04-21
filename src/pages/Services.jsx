@@ -77,6 +77,38 @@ const detailingPackages = [
   },
 ]
 
+const basicCleaningPackages = [
+  {
+    id: 'basic-internal',
+    title: 'Alap Belső Mosás',
+    priceText: 'Kezdő ár',
+    priceValue: '20.000 Ft-tól',
+    items: [
+      'Alap belső takarítás',
+      'Porszívózás',
+      'Műanyagok vegyszeres tisztítása',
+      'Ablakok belső tisztítása',
+    ],
+    color: 'border-white/10',
+  },
+  {
+    id: 'basic-external',
+    title: 'Alap Külső Tisztítás',
+    priceText: 'Kezdő ár',
+    priceValue: '15.000 Ft-tól',
+    items: [
+      'Alapos külső mosás',
+      'Bogár oldás',
+      'Felni tisztítás',
+      'Szálló rozsda eltávolítása és szárítás',
+      'Kézi autómosás',
+      'Szárítás',
+      'Alapvédelem',
+    ],
+    color: 'border-white/10',
+  }
+]
+
 const comboPackages = [
   {
     id: 'combo-1',
@@ -236,6 +268,21 @@ const Services = () => (
     <section className="py-20 px-4 max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-stretch">
         {detailingPackages.map((pkg, i) => (
+          <CustomPackageCard key={i} pkg={pkg} delay={i * 0.1} />
+        ))}
+      </div>
+    </section>
+    
+    {/* Új szekció: Alap tisztítási szolgáltatások */}
+    <section className="py-20 px-4 max-w-7xl mx-auto border-t border-white/5">
+       <ScrollReveal>
+        <span className="gold-line mx-auto mb-6" />
+        <h2 className="text-3xl md:text-4xl font-black text-center text-light mb-16 font-poppins uppercase tracking-tight">
+          Alap <span className="text-accent">tisztítási szolgáltatások</span>
+        </h2>
+      </ScrollReveal>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch max-w-5xl mx-auto">
+        {basicCleaningPackages.map((pkg, i) => (
           <CustomPackageCard key={i} pkg={pkg} delay={i * 0.1} />
         ))}
       </div>
