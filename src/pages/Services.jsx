@@ -50,7 +50,7 @@ const detailingPackages = [
     img: '/images/kulsomosasopciok-v3.webp',
     icon: <img src="/icons/vizcsepp.webp" alt="Vízcsepp Ikon" className="w-16 h-16 object-contain mb-5 opacity-80 drop-shadow-[0_0_10px_rgba(255,255,255,0.15)] relative z-10" />,
     priceText: 'Kezdő ár',
-    priceValue: '13.000 Ft-tól',
+    priceValue: '15.000 Ft-tól',
     items: [
       'Alapos külső mosás',
       'Bogár oldás',
