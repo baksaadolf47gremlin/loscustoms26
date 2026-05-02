@@ -24,7 +24,7 @@ const pairs = [
   },
 ]
 
-const SliderCard = ({ pair, index }) => {
+const SliderCard = ({ pair, index, isMobile }) => {
   const [position, setPosition] = useState(50) // 0–100 %
   const [dragging, setDragging] = useState(false)
   const containerRef = useRef(null)
@@ -70,14 +70,8 @@ const SliderCard = ({ pair, index }) => {
     }
   }, [dragging, onMouseMove, onMouseUp, onTouchMove, onTouchEnd])
 
-  return (
-    <motion.div
-      initial={{ opacity: 0, y: 30 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.6, delay: index * 0.12 }}
-      className="flex flex-col items-center"
-    >
+  const cardContent = (
+    <>
       {/* Card */}
       <div
         ref={containerRef}
@@ -144,45 +138,85 @@ const SliderCard = ({ pair, index }) => {
       <h3 className="text-light text-center text-sm font-semibold tracking-widest uppercase mt-4">
         {pair.title}
       </h3>
+    </>
+  )
+
+  if (isMobile) {
+    return <div className="flex flex-col items-center">{cardContent}</div>
+  }
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 30 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: index * 0.12 }}
+      className="flex flex-col items-center"
+    >
+      {cardContent}
     </motion.div>
   )
 }
 
-const BeforeAfter = () => (
-  <section className="relative w-full pb-24 pt-12 overflow-hidden">
-    <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+const BeforeAfter = () => {
+  const [isMobile, setIsMobile] = useState(false)
 
-      {/* Heading */}
-      <div className="text-center mb-16">
-        <motion.h2
-          initial={{ opacity: 0, y: -20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
-          className="text-accent text-3xl md:text-4xl font-black font-heading tracking-widest uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
-        >
-          — Előtte & Utánna —
-        </motion.h2>
-        <motion.p
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-muted text-sm mt-3"
-        >
-          Húzd a csúszkát és nézd meg a különbséget
-        </motion.p>
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768)
+    check()
+    window.addEventListener('resize', check, { passive: true })
+    return () => window.removeEventListener('resize', check)
+  }, [])
+
+  return (
+    <section className="relative w-full pb-24 pt-12 overflow-hidden">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+
+        {/* Heading */}
+        <div className="text-center mb-16">
+          {isMobile ? (
+            <>
+              <h2 className="text-accent text-3xl md:text-4xl font-black font-heading tracking-widest uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]">
+                — Előtte &amp; Utánna —
+              </h2>
+              <p className="text-muted text-sm mt-3">
+                Húzd a csúszkát és nézd meg a különbséget
+              </p>
+            </>
+          ) : (
+            <>
+              <motion.h2
+                initial={{ opacity: 0, y: -20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6 }}
+                className="text-accent text-3xl md:text-4xl font-black font-heading tracking-widest uppercase drop-shadow-[0_2px_4px_rgba(0,0,0,0.8)]"
+              >
+                — Előtte &amp; Utánna —
+              </motion.h2>
+              <motion.p
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="text-muted text-sm mt-3"
+              >
+                Húzd a csúszkát és nézd meg a különbséget
+              </motion.p>
+            </>
+          )}
+        </div>
+
+        {/* 4-card grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-5xl mx-auto">
+          {pairs.map((pair, i) => (
+            <SliderCard key={i} pair={pair} index={i} isMobile={isMobile} />
+          ))}
+        </div>
+
       </div>
-
-      {/* 4-card grid */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 max-w-5xl mx-auto">
-        {pairs.map((pair, i) => (
-          <SliderCard key={i} pair={pair} index={i} />
-        ))}
-      </div>
-
-    </div>
-  </section>
-)
+    </section>
+  )
+}
 
 export default BeforeAfter
