@@ -102,40 +102,36 @@ const Gallery = () => {
 
       {/* Grid */}
       <section className="py-12 px-4 max-w-7xl mx-auto">
-        <motion.div
-          layout
-          className="columns-2 md:columns-3 lg:columns-4 gap-3 space-y-3"
-        >
-          <AnimatePresence>
+        <AnimatePresence>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3">
             {filtered.map((img, i) => (
               <motion.div
                 key={img.src}
                 layout
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.3, delay: i * 0.03 }}
-                className="gallery-img break-inside-avoid mb-3 cursor-pointer group relative"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.25, delay: Math.min(i * 0.02, 0.3) }}
+                className="gallery-img cursor-pointer group relative aspect-square bg-white/5 rounded-xl overflow-hidden"
                 onClick={() => setLightbox(img.src)}
               >
                 <img
                   src={img.src}
                   alt={`Los Customs referencia ${i + 1}`}
-                  className="w-full h-auto rounded-xl object-cover block bg-white/5"
-                  loading={i < 6 ? "eager" : "lazy"}
-                  fetchpriority={i < 6 ? "high" : "auto"}
+                  className="w-full h-full object-cover block transition-transform duration-500 group-hover:scale-105"
+                  loading={i < 8 ? "eager" : "lazy"}
+                  fetchpriority={i < 4 ? "high" : "auto"}
                   decoding="async"
                 />
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 rounded-xl flex items-center justify-center">
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-all duration-300 flex items-center justify-center">
                   <span className="opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-white text-xs font-medium tracking-wider uppercase">
                     Nagyítás
                   </span>
                 </div>
-                
               </motion.div>
             ))}
-          </AnimatePresence>
-        </motion.div>
+          </div>
+        </AnimatePresence>
       </section>
 
       {/* Lightbox */}
