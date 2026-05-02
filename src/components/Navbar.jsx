@@ -13,8 +13,16 @@ const navLinks = [
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
   const location = useLocation()
   
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768)
+    check()
+    window.addEventListener('resize', check, { passive: true })
+    return () => window.removeEventListener('resize', check)
+  }, [])
+
   const [indicatorStyle, setIndicatorStyle] = useState({ left: 0, width: 0, opacity: 0 })
   const [isReady, setIsReady] = useState(false)
   const navRef = useRef(null)
@@ -60,9 +68,9 @@ const Navbar = () => {
   return (
     <>
       <motion.nav
-        initial={{ y: -100, opacity: 0 }}
+        initial={{ y: isMobile ? 0 : -100, opacity: isMobile ? 1 : 0 }}
         animate={{ y: 0, opacity: 1 }}
-        transition={{ duration: 0.6, ease: 'easeOut' }}
+        transition={isMobile ? {} : { duration: 0.6, ease: 'easeOut' }}
         className="fixed top-0 left-0 right-0 z-50 bg-black/85 backdrop-blur-xl pt-1 lg:pt-3"
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

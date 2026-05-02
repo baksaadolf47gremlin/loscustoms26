@@ -1,4 +1,4 @@
-import { useRef } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ChevronDown, Star, MapPin, Phone, ArrowRight, Shield, Sparkles, Layers } from 'lucide-react'
@@ -9,6 +9,14 @@ import ContactSection from '../components/ContactSection'
 // ─── Hero ────────────────────────────────────────────────────────────────────
 const Hero = () => {
   const videoRef = useRef(null)
+  const [isMobile, setIsMobile] = useState(false)
+
+  useEffect(() => {
+    const check = () => setIsMobile(window.innerWidth < 768)
+    check()
+    window.addEventListener('resize', check, { passive: true })
+    return () => window.removeEventListener('resize', check)
+  }, [])
 
   return (
     <section className="relative w-full bg-black pt-10 sm:pt-12 lg:pt-16 pb-8 px-2 sm:px-6 lg:px-12 xl:px-24 flex flex-col items-center justify-start min-h-[90vh]">
@@ -59,23 +67,35 @@ const Hero = () => {
           className="absolute top-0 left-0 z-20 w-[90%] max-w-[340px] sm:max-w-[500px] lg:max-w-[650px] xl:max-w-[750px] bg-black/75 filter-none p-6 sm:p-10 lg:px-14 lg:py-10 flex flex-col items-start text-left rounded-br-2xl shadow-[20px_20px_60px_rgba(0,0,0,0.8)] transform-gpu"
           style={{ transform: 'translateZ(0)', backfaceVisibility: 'hidden', willChange: 'transform' }}
         >
-          <motion.p
-            initial={{ opacity: 0, x: -20 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="section-label mb-2 text-[8px] sm:text-[10px] tracking-[0.2em]"
-          >
-            Budapest, 1205 · Professzionális Autódetailing
-          </motion.p>
+          {isMobile ? (
+            <p className="section-label mb-2 text-[8px] sm:text-[10px] tracking-[0.2em]">
+              Budapest, 1205 · Professzionális Autódetailing
+            </p>
+          ) : (
+            <motion.p
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              className="section-label mb-2 text-[8px] sm:text-[10px] tracking-[0.2em]"
+            >
+              Budapest, 1205 · Professzionális Autódetailing
+            </motion.p>
+          )}
 
-          <motion.h1
-            initial={{ opacity: 0, x: -30 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.7, delay: 0.35 }}
-            className="font-heading font-black text-2xl sm:text-3xl lg:text-4xl xl:text-[2.75rem] text-light leading-[1.1]"
-          >
-            Ahol az autód <span className="text-accent">visszanyeri</span> identitását.
-          </motion.h1>
+          {isMobile ? (
+            <h1 className="font-heading font-black text-2xl sm:text-3xl lg:text-4xl xl:text-[2.75rem] text-light leading-[1.1]">
+              Ahol az autód <span className="text-accent">visszanyeri</span> identitását.
+            </h1>
+          ) : (
+            <motion.h1
+              initial={{ opacity: 0, x: -30 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.7, delay: 0.35 }}
+              className="font-heading font-black text-2xl sm:text-3xl lg:text-4xl xl:text-[2.75rem] text-light leading-[1.1]"
+            >
+              Ahol az autód <span className="text-accent">visszanyeri</span> identitását.
+            </motion.h1>
+          )}
         </div>
       </div>
 
