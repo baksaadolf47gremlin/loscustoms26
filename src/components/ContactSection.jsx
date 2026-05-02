@@ -198,7 +198,7 @@ const ContactSection = () => {
 
         {/* GTA Map Section */}
         <div className="mt-24 w-full flex flex-col items-center">
-          <div className="iframe-map w-full max-w-2xl aspect-square sm:aspect-video relative overflow-hidden border-2 border-white/20 rounded-xl shadow-[0_0_30px_rgba(0,0,0,0.8)]">
+          <div className="iframe-map w-full max-w-2xl aspect-[9/16] sm:aspect-video relative overflow-hidden border-2 border-white/20 rounded-xl shadow-[0_0_30px_rgba(0,0,0,0.8)]">
             <GtaMap />
           </div>
           <p className="mt-6 text-light font-bold text-lg tracking-wider">1205 Budapest Határ út 70.</p>
