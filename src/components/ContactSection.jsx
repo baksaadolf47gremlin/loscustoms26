@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Phone, Mail, MapPin, Clock, CheckCircle } from 'lucide-react'
+import GtaMap from './GtaMap'
 
 const ContactSection = () => {
   const [isSubmitted, setIsSubmitted] = useState(false)
@@ -197,18 +198,8 @@ const ContactSection = () => {
 
         {/* GTA Map Section */}
         <div className="mt-24 w-full flex flex-col items-center">
-          <div className="iframe-map w-full max-w-2xl aspect-square sm:aspect-video relative overflow-hidden border-2 border-white/20 rounded-xl shadow-[0_0_30px_rgba(0,0,0,0.8)] filter grayscale-[50%] contrast-[1.2]">
-            {/* Real map could be an iframe or dynamic map, using a placeholder for now to mimic GTA map aesthetics */}
-            <iframe 
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2697.9859354832874!2d19.108586799999998!3d47.451213599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741c2cb20d0a9b1%3A0x8a21732836077080!2zQnVkYXBlc3QsIEhhdMOhciDDunQgNzAsIDEyMDU!5e0!3m2!1shu!2shu!4v1776791182414!5m2!1shu!2shu" 
-                className="absolute inset-0 w-full h-full opacity-60" 
-                style={{ border: 0, filter: 'invert(90%) hue-rotate(180deg) contrast(1.2)' }} 
-                allowFullScreen="" 
-                title="Los Customs Budapest Telephely"
-                referrerPolicy="no-referrer-when-downgrade"
-            ></iframe>
-            
-            <div className="absolute inset-0 bg-black/20 pointer-events-none mix-blend-overlay"></div>
+          <div className="iframe-map w-full max-w-2xl aspect-square sm:aspect-video relative overflow-hidden border-2 border-white/20 rounded-xl shadow-[0_0_30px_rgba(0,0,0,0.8)]">
+            <GtaMap />
           </div>
           <p className="mt-6 text-light font-bold text-lg tracking-wider">1205 Budapest Határ út 70.</p>
         </div>

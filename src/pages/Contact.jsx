@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { MapPin, Phone, Mail, Clock, Send, CheckCircle } from 'lucide-react'
+import GtaMap from '../components/GtaMap'
 import ScrollReveal from '../components/ScrollReveal'
 
 const contactInfo = [
@@ -219,6 +220,20 @@ const Contact = () => {
             </div>
           </ScrollReveal>
         </div>
+      </div>
+      
+      {/* GTA Map Section */}
+      <div className="max-w-7xl mx-auto px-4 pb-24">
+        <ScrollReveal>
+          <div className="w-full flex flex-col items-center">
+            <div className="w-full max-w-4xl aspect-[9/16] md:aspect-video relative overflow-hidden border-2 border-white/10 rounded-2xl shadow-[0_0_50px_rgba(0,0,0,0.5)]">
+              <GtaMap />
+            </div>
+            <p className="mt-8 text-light/80 font-heading font-bold text-lg tracking-widest uppercase">
+              1205 Budapest, Határ út 70.
+            </p>
+          </div>
+        </ScrollReveal>
       </div>
     </main>
   )
